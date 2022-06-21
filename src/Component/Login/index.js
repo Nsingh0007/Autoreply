@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 // import { useDispatch } from "react-redux";
 
-import { createTheme } from "@mui/material/styles";
-
 import LoadingSpinner from "../Loader/Loader";
 import "./login.css";
 

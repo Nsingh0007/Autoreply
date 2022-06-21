@@ -19,8 +19,6 @@ import { observer } from "mobx-react-lite";
 import axios from "axios";
 import Popup from "../../../Component/_shared/Popup";
 
-import { LineAxisOutlined } from "@mui/icons-material";
-
 const AddUser = (props) => {
   const [botName, setBotName] = useState("");
 
