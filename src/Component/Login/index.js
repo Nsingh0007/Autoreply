@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import LoadingSpinner from "../Loader/Loader";
 import "./login.css";
 
-const theme = createTheme();
+// const theme = createTheme();
 
 export default function Login() {
   const navigate = useNavigate();
