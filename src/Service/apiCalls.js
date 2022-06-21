@@ -1,0 +1,11 @@
+export const API_BASE_URL = "https://autoreplybackend.moreyeahs.in";
+export const GET_BOT = "https://autoreplybackend.moreyeahs.in";
+// export const CREATE_BOT = "https://autoreplybackend.moreyeahs.in"
+// export const UPDATE_BOT = "https://autoreplybackend.moreyeahs.in"
+export const DELETE_BOT = "https://autoreplybackend.moreyeahs.in";
+export const GET_SETTINGS = "https://autoreplybackend.moreyeahs.in";
+export const SAVE_SETTINGS = "https://autoreplybackend.moreyeahs.in";
+export const CREATE_MESSAGE_SET = "https://autoreplybackend.moreyeahs.in";
+export const GET_MESSAGE_SET = "https://autoreplybackend.moreyeahs.in";
+export const DELETE_MESSAGE_SET = "https://autoreplybackend.moreyeahs.in";
+export const EDIT_MESSAGE = "https://autoreplybackend.moreyeahs.in";
