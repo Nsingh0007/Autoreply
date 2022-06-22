@@ -72,6 +72,8 @@ export const Card = styled.div`
   margin-top: 20px;
   overflow-wrap: anywhere;
 
+  line-height: 18px;
+  color: white;
   border-radius: 15px;
 
   background: #000000;

@@ -6,6 +6,7 @@ class botInfo {
     message: [],
     messageReply: [],
     autoSetting: [],
+    refresh: false,
   };
 
   constructor(initialState) {
@@ -13,7 +14,8 @@ class botInfo {
       setBotName: action,
       setMessageSet: action,
       setReplyMessageSet: action,
-      setMessageSetting: action,
+
+      setRefresh: action,
     });
   }
   setBotName(data) {
@@ -27,6 +29,9 @@ class botInfo {
   }
   setMessageSetting(data) {
     this.initialState.autoSetting = data;
+  }
+  setRefresh(data) {
+    this.initialState.refresh = data;
   }
 }
 export const Bot = new botInfo();

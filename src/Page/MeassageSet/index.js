@@ -13,16 +13,24 @@ const MessageSet = (props) => {
 
   useEffect(() => {
     getBotMsg();
-  }, []);
+  }, [Bot.initialState.refresh]);
 
   const getBotMsg = async () => {
     setIsLoading(true);
+    console.log(
+      "===>>>>GET MESSAGE SET BY BOT ID==>>>>>>>>",
+      location.state.index
+    );
+
     await axios
       .get(
         `https://autoreplybackend.moreyeahs.in/api/bot/getBotByBtId?btId=${location.state.index}`
       )
       .then((res) => {
-        console.log("Posting data", res.data.message);
+        console.log(
+          "GET MEESAGE SET DATA--->>>>>>>>>>>>>>>>>>>>>>>>>",
+          res.data.message
+        );
         Bot.setMessageSet(res.data.message);
         setIsLoading(false);
       })

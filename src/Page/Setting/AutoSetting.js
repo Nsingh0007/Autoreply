@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ReactiveUser, TextField } from "../Style/SettingStyle";
-
+import { GiCheckMark } from "react-icons/gi";
 // import Switch from "@mui/material/Switch";
 import { Bot } from "../../mobx/MobxStore";
 import { IoMdArrowDroprightCircle } from "react-icons/io";
@@ -68,6 +68,7 @@ const AutoSetting = () => {
   return (
     <SettingMainContainer>
       <SettingContainer>
+        <GiCheckMark className="save" />
         <SettingField>
           <SettingLabel>AUTO REPLY TRIGGERS</SettingLabel>
           <SettingContant1>

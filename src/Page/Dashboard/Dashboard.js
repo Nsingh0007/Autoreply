@@ -13,7 +13,7 @@ const Dashboard = () => {
     axios
       .get("https://autoreplybackend.moreyeahs.in/api/bt/getBt")
       .then((res) => {
-        console.log("Posting data", res.data.message);
+        console.log("GET BOAT DATA --?>>>>>>>>>>>>>", res.data.message);
         Bot.setBotName(res.data.message);
         setIsLoading(false);
       })

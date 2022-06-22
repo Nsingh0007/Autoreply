@@ -47,6 +47,14 @@ background-color: #000000;
   height: 180px;
 
 }
+.save{
+  width: 35px;
+  height: 35px;
+  color: #C0392B;
+  border: 3px solid #C0392B;
+  border-radius: 50%;
+  background-color: #020202;
+}
 
 
 .main-body{
