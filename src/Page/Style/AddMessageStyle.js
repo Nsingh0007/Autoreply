@@ -122,11 +122,18 @@ export const PopupInput = styled.input`
   border: 1px solid #333333;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-
+  font-size: 18px;
+  font-weight: 600;
   /* Inside auto layout */
 
   margin-top: 10px;
+  ::placeholder {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8c8e8e;
+  }
 `;
+
 export const PopupButton = styled.button`
   width: 104px;
   height: 50px;

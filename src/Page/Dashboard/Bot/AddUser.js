@@ -8,8 +8,6 @@ import {
   PopupContant,
   ReplyPopupHead,
   PopupInput,
-  PopupButton,
-  PopupCancilButton,
   PopupInputField,
   PopupBtnField,
 } from "../../Style/AddMessageStyle";
