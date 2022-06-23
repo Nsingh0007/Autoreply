@@ -26,6 +26,8 @@ const MessageBar = (props) => {
   //   "================================>",
   //   JSON.stringify(props?.user?._id)
   // );
+  console.log("delt bot===>>>>>>>>>>>>>>>>>>", JSON.stringify(props.user._id));
+
   const [isOpen, setIsOpen] = useState(false);
   const [isDelOpen, setIsDelOpen] = useState(false);
   const [item, setItem] = useState(props?.user);
@@ -35,15 +37,14 @@ const MessageBar = (props) => {
   };
 
   const delhandler = async (id) => {
-    // console.log("delt bot===>>>>>>>>>>>>>>>>>>", Bot.initialState.refresh);
-
     await axios
       .delete(
-        `https://autoreplybackend.moreyeahs.in/api/bot/deletebot?_id=${id}`
+        `https://autoreplybackend.moreyeahs.in/api/bot/deletebot?_id=${props.user._id}`
       )
       .then((res) => {
         console.log("delt reply bot===>>>>>>>>>>>>>>>>>>", res.data, Bot);
         // Bot.setRefresh(!Bot.initialState.refresh);
+        props.getBotMsg();
         togglePopup();
       })
       .catch((err) => console.log(err));
@@ -70,7 +71,7 @@ const MessageBar = (props) => {
                   <p>Delete</p>
                 </PopupDelField>
                 <div>
-                  <MessageEdit />
+                  <MessageEdit item={item} getBotMsg={props.getBotMsg} />
                 </div>
               </PopupEditContant>
             </EditPopup>

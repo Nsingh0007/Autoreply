@@ -16,44 +16,49 @@ const MessageSet = (props) => {
   }, [Bot.initialState.refresh]);
 
   const getBotMsg = async () => {
-    setIsLoading(true);
-    console.log(
-      "===>>>>GET MESSAGE SET BY BOT ID==>>>>>>>>",
-      location.state.index
-    );
+    try {
+      setIsLoading(true);
+      console.log(
+        "===>>>>GET MESSAGE SET BY BOT ID==>>>>>>>>",
+        location.state.index
+      );
 
-    await axios
-      .get(
-        `https://autoreplybackend.moreyeahs.in/api/bot/getBotByBtId?btId=${location.state.index}`
-      )
-      .then((res) => {
-        console.log(
-          "GET MEESAGE SET DATA--->>>>>>>>>>>>>>>>>>>>>>>>>",
-          res.data.message
-        );
-        Bot.setMessageSet(res.data.message);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setIsLoading(false);
-      });
+      await axios
+        .get(
+          `https://autoreplybackend.moreyeahs.in/api/bot/getBotByBtId?btId=${location.state.index}`
+        )
+        .then((res) => {
+          console.log(
+            "GET MEESAGE SET DATA--->>>>>>>>>>>>>>>>>>>>>>>>>",
+            res.data.message
+          );
+          Bot.setMessageSet(res.data.message);
+          setIsLoading(false);
+        });
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+    }
   };
 
   const addMessageHandler = async (uname) => {
-    setIsLoading(true);
-    await axios
-      .post("https://autoreplybackend.moreyeahs.in/api/bot/createbot", {
-        title: uname,
-        mobile: "1234567890",
-        btId: location.state.index,
-      })
-      .then((res) => {
-        getBotMsg();
-        console.log("Posting data", res.data);
-        setIsLoading(false);
-      })
-      .catch((err) => setIsLoading(false));
+    try {
+      setIsLoading(true);
+      await axios
+        .post("https://autoreplybackend.moreyeahs.in/api/bot/createbot", {
+          title: uname,
+          mobile: "1234567890",
+          btId: location.state.index,
+        })
+        .then((res) => {
+          getBotMsg();
+          console.log("Posting data", res.data);
+          setIsLoading(false);
+        });
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+    }
 
     // var messageData = Bot.initialState.message;
     // Bot.setMessageSet([
@@ -75,7 +80,10 @@ const MessageSet = (props) => {
               </div>
               <div>
                 {Bot.initialState.message.length > 0 && (
-                  <MessageListA users={Bot.initialState.message} />
+                  <MessageListA
+                    users={Bot.initialState.message}
+                    getBotMsg={getBotMsg}
+                  />
                 )}
               </div>
             </div>

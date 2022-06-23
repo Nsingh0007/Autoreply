@@ -8,31 +8,36 @@ import { observer } from "mobx-react";
 import LoadingSpinner from "../../Component/Loader/Loader";
 const Dashboard = () => {
   const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
-    setIsLoading(true);
-    axios
-      .get("https://autoreplybackend.moreyeahs.in/api/bt/getBt")
-      .then((res) => {
-        console.log("GET BOAT DATA --?>>>>>>>>>>>>>", res.data.message);
-        Bot.setBotName(res.data.message);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setIsLoading(false);
-      });
+    getAllBots();
   }, []);
 
   const [usersList, setUsersList] = useState([
     { name: "bot A", id: Math.random().toString() },
   ]);
-
+  const getAllBots = async () => {
+    try {
+      setIsLoading(true);
+      await axios
+        .get("https://autoreplybackend.moreyeahs.in/api/bt/getBt")
+        .then((res) => {
+          console.log("GET BOAT DATA --?>>>>>>>>>>>>>", res.data.message);
+          Bot.setBotName(res.data.message);
+          setIsLoading(false);
+        });
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+    }
+  };
   const addUserHandler = (uname) => {
+    getAllBots();
     var botData = Bot.initialState.bot;
-    Bot.setBotName([...botData, { name: uname, id: Math.random().toString() }]);
-    setUsersList((prevUsers) => {
-      return [...prevUsers, { name: uname, id: Math.random().toString() }];
-    });
+    // Bot.setBotName([...botData, { name: uname, id: Math.random().toString() }]);
+    // setUsersList((prevUsers) => {
+    //   return [...prevUsers, { name: uname, id: Math.random().toString() }];
+    // });
   };
 
   return (
@@ -42,7 +47,7 @@ const Dashboard = () => {
       ) : (
         <>
           <div>
-            <AddUser addUserHandler={addUserHandler} />
+            <AddUser addUserHandler={addUserHandler} getAllBots={getAllBots} />
           </div>
           <div>
             {Bot.initialState.bot.length > 0 && (

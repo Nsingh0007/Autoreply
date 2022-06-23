@@ -20,14 +20,27 @@ import { Bot } from "../../mobx/MobxStore";
 const MessageReplyBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDelOpen, setIsDelOpen] = useState(false);
-
+  const [item, setItem] = useState(props?.user);
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
-
+  console.log("hellooooo", JSON.stringify(props.user));
   const delReplyhandler = async (id) => {
-    props.userr(id);
-    togglePopup();
+    console.log("mota ", id);
+    await axios
+      .delete(
+        `https://autoreplybackend.moreyeahs.in/api/message/deleteById?_id=${props.user._id}`
+      )
+      .then((res) => {
+        console.log(
+          "delt reply message reply ===>>>>>>>>>>>>>>>>>>",
+          res.data,
+          Bot
+        );
+        props.getMessageReply();
+        togglePopup();
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

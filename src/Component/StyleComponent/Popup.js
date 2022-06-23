@@ -5,8 +5,8 @@ export const PopupBox = styled.div`
   align-items: center;
 `;
 export const Box = styled.div`
-  width: 328px;
-  height: 227px;
+  width: 300px;
+  height: 180px;
   align-items: center;
   background: rgb(52, 52, 52);
   border-radius: 10px;

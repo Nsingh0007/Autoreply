@@ -15,17 +15,16 @@ const MessageReplyList1 = (props) => {
   // useEffect(() => {
   //   delMsgset();
   // }, []);
-  const DeltReplyMessage = async (id) => {
-    console.log("first", id);
-    await axios
-      .delete(
-        `https://autoreplybackend.moreyeahs.in/api/message/deleteMessageSet?_id=${id}`
-      )
-      .then((res) => {
-        console.log("deltReply bot===>>>>>>>>>>>>>>>>>>", res.data);
-      })
-      .catch((err) => console.log(err));
-  };
+  // const DeltReplyMessage = async (id) => {
+  //   console.log("first", id);
+  //   await axios
+  //     .delete(
+  //       `https://autoreplybackend.moreyeahs.in/api/message/deleteMessageSet?_id=${id}`
+  //     )
+  //     .then((res) => {
+  //       console.log("deltReply bot===>>>>>>>>>>>>>>>>>>", res.data);
+  //     })
+  //     .catch((err) => console.log(err));
 
   return (
     <CardContainer>
@@ -35,7 +34,10 @@ const MessageReplyList1 = (props) => {
             <Card key={user.id}>{user?.messageTitle}</Card>
 
             <MessageSetAdded>
-              <MessageReplyBar user={user} userr={DeltReplyMessage} />
+              <MessageReplyBar
+                user={user}
+                getMessageReply={props.getMessageReply}
+              />
               {/* <div>
                 <HiDotsHorizontal
                   className="menu-icon"

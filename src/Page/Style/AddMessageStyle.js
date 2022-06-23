@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const SubHeaderContainer = styled.div`
-  width: 98%;
+  width: 100%;
   color: #fff;
   height: 100px;
   display: flex;
@@ -88,16 +88,15 @@ export const Card = styled.div`
   align-items: center;
 `;
 export const PopupContant = styled.div`
-  /* margin-top: 20px; */
   display: flex;
   justify-content: center;
 
   flex-wrap: wrap;
   flex-direction: row;
-  margin-top: 10px; ;
+  margin-top: 5px; ;
 `;
 export const PopupInputField = styled.div`
-  margin: 30px;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -118,6 +117,7 @@ export const PopupInput = styled.input`
   width: 228px;
   height: 45px;
   color: white;
+  padding-left: 25px;
   background: #0c0c0c;
   border: 1px solid #333333;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -131,7 +131,6 @@ export const PopupInput = styled.input`
     font-size: 14px;
     font-weight: 600;
     color: #8c8e8e;
-    padding-left: 20px;
   }
 `;
 

@@ -31,28 +31,29 @@ const MessageReply = () => {
   };
 
   const ReplyMessagehandler = async (uname) => {
-    setIsLoading(true);
-    let body = {
-      msgList: [
-        ...Bot.initialState.messageReply,
-        { botId: location.state.index, messageTitle: uname },
-      ],
-    };
-    await axios
-      .post(
-        "https://autoreplybackend.moreyeahs.in/api/message/createMessage",
-        body
-      )
-      .then((res) => {
-        setRefresh(!refresh);
-        console.log("Posting data", res.data);
+    try {
+      setIsLoading(true);
+      let body = {
+        msgList: [
+          ...Bot.initialState.messageReply,
+          { botId: location.state.index, messageTitle: uname },
+        ],
+      };
+      await axios
+        .post(
+          "https://autoreplybackend.moreyeahs.in/api/message/createMessage",
+          body
+        )
+        .then((res) => {
+          setRefresh(!refresh);
+          console.log("Posting data", res.data);
 
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setIsLoading(false);
-      });
+          setIsLoading(false);
+        });
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+    }
 
     // var messageReplyData = Bot.initialState.messageReply;
     // Bot.setMessageSet([
@@ -77,7 +78,10 @@ const MessageReply = () => {
               </div>
               <div>
                 {Bot.initialState.messageReply.length > 0 && (
-                  <MessageReplyList1 users={Bot.initialState.messageReply} />
+                  <MessageReplyList1
+                    users={Bot.initialState.messageReply}
+                    getMessageReply={getMessageReply}
+                  />
                 )}
               </div>
             </div>

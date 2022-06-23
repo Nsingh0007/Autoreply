@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../../Component/CustomButton/index";
 import {
   ButtonField,
@@ -22,14 +22,18 @@ const AddUser = (props) => {
   const [disable, setDisable] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  // const [refresh, setRefresh] = useState(false);
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
   const handelpopup = () => {
     togglePopup();
   };
+  // useEffect(() => {
+  //   addBotHandler();
+  // }, [refresh]);
+
   const addBotHandler = async (e) => {
-    console.log("first");
     setIsLoading(true);
     if (botName.trim() === "") {
     } else {
@@ -38,9 +42,12 @@ const AddUser = (props) => {
           title: botName,
         })
         .then((res) => {
-          Bot.setBotName(res.data);
+          // Bot.setBotName(res.data);
+          // props.getAllBots()
           console.log("Posting data", res.data);
           props.addUserHandler(botName);
+
+          // setRefresh(!refresh);
           setIsLoading(false);
         })
         .catch((error) => {
@@ -92,7 +99,6 @@ const AddUser = (props) => {
                             onClick={() => addBotHandler()}
                             style="button-submit"
                           >
-                            {" "}
                             Submit
                           </Button>
                           <Button

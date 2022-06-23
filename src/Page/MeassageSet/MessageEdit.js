@@ -5,7 +5,8 @@ import Popup from "../../Component/_shared/Popup";
 import Button from "../../Component/CustomButton";
 import { Bot } from "../../mobx/MobxStore";
 import axios from "axios";
-const MessageEdit = () => {
+const MessageEdit = (props) => {
+  console.log("--->>>>>>>>>>>>>>>>>>>", JSON.stringify(props?.item));
   const [isOpen, setIsOpen] = useState(false);
   const [isDelOpen, setIsDelOpen] = useState(false);
   const [editName, setEditName] = useState("");
@@ -13,20 +14,25 @@ const MessageEdit = () => {
     setIsDelOpen(!isDelOpen);
   };
 
-  const togglePopup = () => {};
-  const handelpopup = async (props) => {
-    console.log("first", props);
+  // const togglePopup = (props) => {};
+  const handelpopup = async (id) => {
+    console.log("first", id);
+
     await axios
-      .update(`https://autoreplybackend.moreyeahs.in/api/bot/updatebot=`, {
-        title: editName,
-        mobile: "1234567890",
-      })
+      .put(
+        `https://autoreplybackend.moreyeahs.in/api/bot/updatebot?botId=${id}`,
+        {
+          title: editName,
+          mobile: "1234567890",
+        }
+      )
       .then((res) => {
         console.log(
           "GET MEESAGE SET DATA--->>>>>>>>>>>>>>>>>>>>>>>>>",
           res.data.message
         );
-        Bot.setEditName(res.data.message);
+        props.getBotMsg();
+        // Bot.setEditName(res.data.message);
         // setIsLoading(false);
       })
       .catch((error) => {
@@ -73,7 +79,7 @@ const MessageEdit = () => {
                 <div className="edit-field-button">
                   <Button
                     className="popupButton"
-                    onClick={handelpopup}
+                    onClick={() => handelpopup(props?.item?._id)}
                     style="edit-button"
                   >
                     Edit
