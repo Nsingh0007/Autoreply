@@ -13,9 +13,6 @@ const Dashboard = () => {
     getAllBots();
   }, []);
 
-  const [usersList, setUsersList] = useState([
-    { name: "bot A", id: Math.random().toString() },
-  ]);
   const getAllBots = async () => {
     try {
       setIsLoading(true);
@@ -32,12 +29,8 @@ const Dashboard = () => {
     }
   };
   const addUserHandler = (uname) => {
-    getAllBots();
     var botData = Bot.initialState.bot;
-    // Bot.setBotName([...botData, { name: uname, id: Math.random().toString() }]);
-    // setUsersList((prevUsers) => {
-    //   return [...prevUsers, { name: uname, id: Math.random().toString() }];
-    // });
+    Bot.setBotName([...botData, { name: uname, id: Math.random().toString() }]);
   };
 
   return (

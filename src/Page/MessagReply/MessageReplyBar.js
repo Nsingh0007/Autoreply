@@ -61,7 +61,7 @@ const MessageReplyBar = (props) => {
                     className="del-icon"
                     onClick={delReplyhandler}
                   />
-                  <p>Delet</p>
+                  <p>Delete</p>
                 </PopupDelField>
               </PopupEditContant>
             </EditPopup>
