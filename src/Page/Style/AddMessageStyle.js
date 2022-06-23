@@ -1,10 +1,10 @@
 import styled from "styled-components";
 export const SubHeaderContainer = styled.div`
-  width: 100%;
+  width: 98%;
   color: #fff;
   height: 100px;
   display: flex;
-  left: 0;
+
   position: absolute;
   margin-top: 120px;
   justify-content: center;
@@ -18,7 +18,7 @@ export const SubHeaderContainer = styled.div`
 //   align-items: center;
 // `;
 export const SubHeaderField = styled.div`
-  width: 80%;
+  width: 86%;
 
   display: flex;
   justify-content: space-between;
@@ -131,6 +131,7 @@ export const PopupInput = styled.input`
     font-size: 14px;
     font-weight: 600;
     color: #8c8e8e;
+    padding-left: 20px;
   }
 `;
 
@@ -181,9 +182,10 @@ export const CardContainer = styled.div`
   align-items: center;
 `;
 export const CardField = styled.div`
-  width: 90%;
+  width: 91%;
   padding-left: 40px;
   display: flex;
+
   margin-top: 250px;
   flex-wrap: wrap;
 `;

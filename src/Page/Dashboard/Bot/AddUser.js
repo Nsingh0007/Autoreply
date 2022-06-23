@@ -19,7 +19,7 @@ import Popup from "../../../Component/_shared/Popup";
 
 const AddUser = (props) => {
   const [botName, setBotName] = useState("");
-
+  const [disable, setDisable] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const togglePopup = () => {
@@ -92,6 +92,7 @@ const AddUser = (props) => {
                             onClick={() => addBotHandler()}
                             style="button-submit"
                           >
+                            {" "}
                             Submit
                           </Button>
                           <Button

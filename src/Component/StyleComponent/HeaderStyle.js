@@ -15,7 +15,8 @@ export const HeaderContainer = styled.div`
 `;
 //
 export const HeaderField = styled.div`
-width:80%;
+
+width:86%;
 display: flex;
 justify-content: space-between;
 

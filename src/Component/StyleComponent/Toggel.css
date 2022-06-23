@@ -58,7 +58,7 @@
     color: #fff;
     text-align: right;
   }
-  . {
+  /* . {
     display: block;
     width: 18px;
     height: 20px;
@@ -71,10 +71,10 @@
     border: 0 solid #bbb;
     border-radius: 20px;
     transition: all 0.3s ease-in 0s;
-  }
-  .checkbox:checked + .label .inner {
+  } */
+  /* .checkbox:checked + .label .inner {
     margin-left: 0;
   }
   .checkbox:checked + .label . {
     right: 0px;
-  }
+  } */

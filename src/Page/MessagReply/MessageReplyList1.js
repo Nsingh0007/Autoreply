@@ -13,14 +13,11 @@ import {
 import { ClickAwayListener } from "@mui/base";
 
 const MessageReplyList1 = (props) => {
-  console.log("props", props.users);
-
   // useEffect(() => {
   //   delMsgset();
   // }, []);
   const DeltReplyMessage = async (id) => {
     console.log("first", id);
-
     await axios
       .delete(
         `https://autoreplybackend.moreyeahs.in/api/message/deleteMessageSet?_id=${id}`
