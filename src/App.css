@@ -150,6 +150,13 @@ line-height: 22px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+
+
+}
+.setting-text-field{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

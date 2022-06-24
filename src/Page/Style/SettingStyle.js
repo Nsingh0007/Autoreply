@@ -153,24 +153,47 @@ export const SettingTextField = styled.div`
     margin-top: 8px;
   }
 `;
-
-export const TextField = styled.input`
-  border: 3px solid #000;
+export const TextFieldPlace = styled.div`
   border-radius: 15px;
   background-color: #bbbcbc;
   height: 50px;
   line-height: normal;
-  color: #282828;
+  color: red;
   display: block;
   width: 100%;
   box-sizing: border-box;
   user-select: auto;
   font-size: 16px;
   padding: 0 6px;
-  padding-left: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  padding-top: 13px;
 
-  ::placeholder {
-    color: #8c8e8e;
+  border-left: none;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+`;
+
+export const TextField = styled.input`
+  border: none;
+  border-radius: 15px;
+  border-right: none;
+  background-color: #bbbcbc;
+  height: 50px;
+  line-height: normal;
+  color: #282828;
+  display: block;
+
+  box-sizing: border-box;
+  user-select: auto;
+  font-size: 16px;
+  padding: 0 6px;
+
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  l ::placeholder {
+    color: black;
   }
 
   :focus {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { ReactiveUser, TextField } from "../Style/SettingStyle";
+import { ReactiveUser, TextField, TextFieldPlace } from "../Style/SettingStyle";
 
 import Switch from "@mui/material/Switch";
 
@@ -75,14 +75,13 @@ const AutoSetting = () => {
               <SettingText>Enable Call Reply</SettingText>
             </div>
             <div>
-              {/* <Switch
+              <Switch
                 {...label}
                 defaultChecked
                 style={{ color: "red" }}
                 color="error"
                 value={isCallEnableReply}
-              /> */}
-              <Switch {...label} defaultChecked />
+              />
             </div>
           </SettingContant1>
           <SettingContant1>
@@ -90,14 +89,13 @@ const AutoSetting = () => {
               <SettingText>Enable SMS Reply</SettingText>
             </div>
             <div>
-              {/* <Switch
+              <Switch
                 {...label}
                 defaultChecked
                 style={{ color: "red" }}
                 color="error"
                 value={isSMSEnableReply}
-              /> */}
-              <Switch {...label} defaultChecked />
+              />
             </div>
           </SettingContant1>
           <SettingContant1>
@@ -105,14 +103,13 @@ const AutoSetting = () => {
               <SettingText>Enable MMS Reply</SettingText>
             </div>
             <div>
-              {/* <Switch
+              <Switch
                 {...label}
                 defaultChecked
                 style={{ color: "red" }}
                 color="error"
                 value={isMMSEnableReply}
-              /> */}
-              <Switch {...label} defaultChecked />
+              />
             </div>
           </SettingContant1>
 
@@ -121,34 +118,45 @@ const AutoSetting = () => {
             <div>
               <SettingText>Delay Response time</SettingText>
             </div>
-            <div>
+            <div className="setting-text-field">
               <TextField
-                style={{ width: "120px" }}
-                placeholder="120sec"
+                style={{ width: "45px" }}
+                placeholder="sec"
                 value={delayResponse}
               />
+              <TextFieldPlace style={{ width: "70px" }}>Sec</TextFieldPlace>
             </div>
           </SettingContant2>
         </SettingField>
         <SettingField1>
           <SettingFieldSleepTimer>
             <SettingLabel>Sleep Timer</SettingLabel>
+
+            <SettingContant2>
+              <div>
+                <SettingText>Inactive Times</SettingText>
+              </div>
+              <div className="setting-text-field">
+                <TextField
+                  style={{ width: "45px", paddingLeft: "10px" }}
+                  placeholder="min"
+                  value={inActiveTimes}
+                />{" "}
+                <TextFieldPlace style={{ width: "70px" }}>Mins</TextFieldPlace>
+              </div>
+            </SettingContant2>
             <SettingContant2>
               <div>
                 <SettingText>Default Text</SettingText>
               </div>
               <div>
-                <TextField placeholder=" Mins" value={defaultText} />
-              </div>
-            </SettingContant2>
-            <SettingContant2>
-              <div>
-                <SettingText>Inactive Times</SettingText>
-              </div>
-              <div>
                 <TextField
+                  style={{
+                    borderRadius: "15px 15px 15px 15px",
+                    paddingLeft: "10px",
+                  }}
                   placeholder="Are You Available ?"
-                  value={inActiveTimes}
+                  value={defaultText}
                 />
               </div>
             </SettingContant2>
@@ -156,8 +164,13 @@ const AutoSetting = () => {
               <div>
                 <SettingText>Disconnection Timer</SettingText>
               </div>
-              <div>
-                <TextField placeholder=" Mins" value={disconnectTimes} />
+              <div className="setting-text-field">
+                <TextField
+                  style={{ width: "45px", paddingLeft: "10px" }}
+                  placeholder=" Mins"
+                  value={disconnectTimes}
+                />
+                <TextFieldPlace style={{ width: "70px" }}>Mins</TextFieldPlace>
               </div>
             </SettingContant2>
             <SettingLabel>Purge</SettingLabel>
@@ -167,13 +180,14 @@ const AutoSetting = () => {
               </div>
               <ReactiveUser>
                 <TextField
-                  style={{ width: "120px", paddingLeft: "30px" }}
+                  style={{ width: "45px", paddingLeft: "10px" }}
                   placeholder=" Mins"
                   value={reativeUser}
                 />
-                <IoMdArrowDroprightCircle className="arrow-setting" />
+                <TextFieldPlace style={{ width: "70px" }}>Mins</TextFieldPlace>
               </ReactiveUser>
             </SettingContant2>
+            <IoMdArrowDroprightCircle className="arrow-setting" />
           </SettingFieldSleepTimer>
         </SettingField1>
       </SettingContainer>
