@@ -55,7 +55,7 @@ export const SettingContainer = styled.div`
 `;
 export const SettingField = styled.div`
   flex-direction: coloum;
-  width: 35%;
+  width: 32%;
   @media only screen and (max-width: 1300px) {
     width: 26%;
   }

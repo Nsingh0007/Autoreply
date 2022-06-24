@@ -132,7 +132,7 @@ const AutoSetting = () => {
           <SettingFieldSleepTimer>
             <SettingLabel>Sleep Timer</SettingLabel>
 
-            <SettingContant2>
+            <SettingContant2 style={{ marginRight: "75px" }}>
               <div>
                 <SettingText>Inactive Times</SettingText>
               </div>
@@ -145,7 +145,7 @@ const AutoSetting = () => {
                 <TextFieldPlace style={{ width: "70px" }}>Mins</TextFieldPlace>
               </div>
             </SettingContant2>
-            <SettingContant2>
+            <SettingContant2 style={{ marginRight: "75px" }}>
               <div>
                 <SettingText>Default Text</SettingText>
               </div>
@@ -160,7 +160,7 @@ const AutoSetting = () => {
                 />
               </div>
             </SettingContant2>
-            <SettingContant2>
+            <SettingContant2 style={{ marginRight: "75px" }}>
               <div>
                 <SettingText>Disconnection Timer</SettingText>
               </div>
@@ -179,15 +179,19 @@ const AutoSetting = () => {
                 <SettingText>Reactive Users</SettingText>
               </div>
               <ReactiveUser>
-                <TextField
-                  style={{ width: "45px", paddingLeft: "10px" }}
-                  placeholder=" Mins"
-                  value={reativeUser}
-                />
-                <TextFieldPlace style={{ width: "70px" }}>Mins</TextFieldPlace>
+                <div className="reactive-field-contant">
+                  <TextField
+                    style={{ width: "45px", paddingLeft: "10px" }}
+                    placeholder=" Mins"
+                    value={reativeUser}
+                  />
+                  <TextFieldPlace style={{ width: "70px" }}>
+                    Mins
+                  </TextFieldPlace>
+                  <IoMdArrowDroprightCircle className="arrow-setting" />
+                </div>
               </ReactiveUser>
             </SettingContant2>
-            <IoMdArrowDroprightCircle className="arrow-setting" />
           </SettingFieldSleepTimer>
         </SettingField1>
       </SettingContainer>
