@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ReactiveUser, TextField } from "../Style/SettingStyle";
-import { GiCheckMark } from "react-icons/gi";
-// import Switch from "@mui/material/Switch";
+
+import Switch from "@mui/material/Switch";
+
 import { Bot } from "../../mobx/MobxStore";
 import { IoMdArrowDroprightCircle } from "react-icons/io";
 import {
@@ -17,7 +18,6 @@ import {
   SettingText,
 } from "../Style/SettingStyle";
 const label = { inputProps: { "aria-label": "Switch demo" } };
-
 const AutoSetting = () => {
   const [isCallEnableReply, setIsCallEnableReply] = useState(false);
   const [isSMSEnableReply, setIsSMSEnableReply] = useState(false);
@@ -68,7 +68,6 @@ const AutoSetting = () => {
   return (
     <SettingMainContainer>
       <SettingContainer>
-        <GiCheckMark className="save" />
         <SettingField>
           <SettingLabel>AUTO REPLY TRIGGERS</SettingLabel>
           <SettingContant1>
@@ -83,6 +82,7 @@ const AutoSetting = () => {
                 color="error"
                 value={isCallEnableReply}
               /> */}
+              <Switch {...label} defaultChecked />
             </div>
           </SettingContant1>
           <SettingContant1>
@@ -97,6 +97,7 @@ const AutoSetting = () => {
                 color="error"
                 value={isSMSEnableReply}
               /> */}
+              <Switch {...label} defaultChecked />
             </div>
           </SettingContant1>
           <SettingContant1>
@@ -111,6 +112,7 @@ const AutoSetting = () => {
                 color="error"
                 value={isMMSEnableReply}
               /> */}
+              <Switch {...label} defaultChecked />
             </div>
           </SettingContant1>
 
