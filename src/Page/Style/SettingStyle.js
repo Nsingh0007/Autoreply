@@ -55,6 +55,7 @@ export const SettingContainer = styled.div`
 `;
 export const SettingField = styled.div`
   flex-direction: coloum;
+
   width: 32%;
   @media only screen and (max-width: 1300px) {
     width: 26%;
@@ -62,6 +63,11 @@ export const SettingField = styled.div`
   @media only screen and (max-width: 1300px) {
     width: 18%;
   }
+`;
+export const SetField = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-direction: coloum;
 `;
 export const SettingHead = styled.h1`
   font-size: 40px;

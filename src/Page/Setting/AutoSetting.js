@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ReactiveUser, TextField, TextFieldPlace } from "../Style/SettingStyle";
-
+import Button from "../../Component/CustomButton";
 import Switch from "@mui/material/Switch";
 
 import { Bot } from "../../mobx/MobxStore";
@@ -68,132 +68,147 @@ const AutoSetting = () => {
   return (
     <SettingMainContainer>
       <SettingContainer>
-        <SettingField>
-          <SettingLabel>AUTO REPLY TRIGGERS</SettingLabel>
-          <SettingContant1>
-            <div>
-              <SettingText>Enable Call Reply</SettingText>
-            </div>
-            <div>
-              <Switch
-                {...label}
-                defaultChecked
-                style={{ color: "red" }}
-                color="error"
-                value={isCallEnableReply}
-              />
-            </div>
-          </SettingContant1>
-          <SettingContant1>
-            <div>
-              <SettingText>Enable SMS Reply</SettingText>
-            </div>
-            <div>
-              <Switch
-                {...label}
-                defaultChecked
-                style={{ color: "red" }}
-                color="error"
-                value={isSMSEnableReply}
-              />
-            </div>
-          </SettingContant1>
-          <SettingContant1>
-            <div>
-              <SettingText>Enable MMS Reply</SettingText>
-            </div>
-            <div>
-              <Switch
-                {...label}
-                defaultChecked
-                style={{ color: "red" }}
-                color="error"
-                value={isMMSEnableReply}
-              />
-            </div>
-          </SettingContant1>
-
-          <SettingLabel>Delay Response</SettingLabel>
-          <SettingContant2>
-            <div>
-              <SettingText>Delay Response time</SettingText>
-            </div>
-            <div className="setting-text-field">
-              <TextField
-                style={{ width: "45px" }}
-                placeholder="sec"
-                value={delayResponse}
-              />
-              <TextFieldPlace style={{ width: "70px" }}>Sec</TextFieldPlace>
-            </div>
-          </SettingContant2>
-        </SettingField>
-        <SettingField1>
-          <SettingFieldSleepTimer>
-            <SettingLabel>Sleep Timer</SettingLabel>
-
-            <SettingContant2 style={{ marginRight: "75px" }}>
-              <div>
-                <SettingText>Inactive Times</SettingText>
-              </div>
-              <div className="setting-text-field">
-                <TextField
-                  style={{ width: "45px", paddingLeft: "10px" }}
-                  placeholder="min"
-                  value={inActiveTimes}
-                />{" "}
-                <TextFieldPlace style={{ width: "70px" }}>Mins</TextFieldPlace>
-              </div>
-            </SettingContant2>
-            <SettingContant2 style={{ marginRight: "75px" }}>
-              <div>
-                <SettingText>Default Text</SettingText>
-              </div>
-              <div>
-                <TextField
-                  style={{
-                    borderRadius: "15px 15px 15px 15px",
-                    paddingLeft: "10px",
-                  }}
-                  placeholder="Are You Available ?"
-                  value={defaultText}
-                />
-              </div>
-            </SettingContant2>
-            <SettingContant2 style={{ marginRight: "75px" }}>
-              <div>
-                <SettingText>Disconnection Timer</SettingText>
-              </div>
-              <div className="setting-text-field">
-                <TextField
-                  style={{ width: "45px", paddingLeft: "10px" }}
-                  placeholder=" Mins"
-                  value={disconnectTimes}
-                />
-                <TextFieldPlace style={{ width: "70px" }}>Mins</TextFieldPlace>
-              </div>
-            </SettingContant2>
-            <SettingLabel>Purge</SettingLabel>
-            <SettingContant2>
-              <div>
-                <SettingText>Reactive Users</SettingText>
-              </div>
-              <ReactiveUser>
-                <div className="reactive-field-contant">
-                  <TextField
-                    style={{ width: "45px", paddingLeft: "10px" }}
-                    placeholder=" Mins"
-                    value={reativeUser}
-                  />
-                  <TextFieldPlace style={{ width: "70px" }}>
-                    Mins
-                  </TextFieldPlace>
-                  <IoMdArrowDroprightCircle className="arrow-setting" />
+        <div className="exm">
+          <div className="ex">
+            <SettingField>
+              <SettingLabel>AUTO REPLY TRIGGERS</SettingLabel>
+              <SettingContant1>
+                <div>
+                  <SettingText>Enable Call Reply</SettingText>
                 </div>
-              </ReactiveUser>
-            </SettingContant2>
-          </SettingFieldSleepTimer>
-        </SettingField1>
+                <div>
+                  <Switch
+                    {...label}
+                    defaultChecked
+                    style={{ color: "red" }}
+                    color="error"
+                    value={isCallEnableReply}
+                  />
+                </div>
+              </SettingContant1>
+              <SettingContant1>
+                <div>
+                  <SettingText>Enable SMS Reply</SettingText>
+                </div>
+                <div>
+                  <Switch
+                    {...label}
+                    defaultChecked
+                    style={{ color: "red" }}
+                    color="error"
+                    value={isSMSEnableReply}
+                  />
+                </div>
+              </SettingContant1>
+              <SettingContant1>
+                <div>
+                  <SettingText>Enable MMS Reply</SettingText>
+                </div>
+                <div>
+                  <Switch
+                    {...label}
+                    defaultChecked
+                    style={{ color: "red" }}
+                    color="error"
+                    value={isMMSEnableReply}
+                  />
+                </div>
+              </SettingContant1>
+
+              <SettingLabel>Delay Response</SettingLabel>
+              <SettingContant2>
+                <div>
+                  <SettingText>Delay Response time</SettingText>
+                </div>
+                <div className="setting-text-field">
+                  <TextField
+                    style={{ width: "45px" }}
+                    placeholder="sec"
+                    value={delayResponse}
+                  />
+                  <TextFieldPlace style={{ width: "70px" }}>Sec</TextFieldPlace>
+                </div>
+              </SettingContant2>
+            </SettingField>
+            <SettingField1>
+              <SettingFieldSleepTimer>
+                <SettingLabel>Sleep Timer</SettingLabel>
+
+                <SettingContant2 style={{ marginRight: "75px" }}>
+                  <div>
+                    <SettingText>Inactive Times</SettingText>
+                  </div>
+                  <div className="setting-text-field">
+                    <TextField
+                      style={{ width: "45px", paddingLeft: "10px" }}
+                      placeholder="min"
+                      value={inActiveTimes}
+                    />{" "}
+                    <TextFieldPlace style={{ width: "70px" }}>
+                      Mins
+                    </TextFieldPlace>
+                  </div>
+                </SettingContant2>
+                <SettingContant2 style={{ marginRight: "75px" }}>
+                  <div>
+                    <SettingText>Default Text</SettingText>
+                  </div>
+                  <div>
+                    <TextField
+                      style={{
+                        borderRadius: "15px 15px 15px 15px",
+                        paddingLeft: "10px",
+                      }}
+                      placeholder="Are You Available ?"
+                      value={defaultText}
+                    />
+                  </div>
+                </SettingContant2>
+                <SettingContant2 style={{ marginRight: "75px" }}>
+                  <div>
+                    <SettingText>Disconnection Timer</SettingText>
+                  </div>
+                  <div className="setting-text-field">
+                    <TextField
+                      style={{ width: "45px", paddingLeft: "10px" }}
+                      placeholder=" Mins"
+                      value={disconnectTimes}
+                    />
+                    <TextFieldPlace style={{ width: "70px" }}>
+                      Mins
+                    </TextFieldPlace>
+                  </div>
+                </SettingContant2>
+                <SettingLabel>Purge</SettingLabel>
+                <SettingContant2>
+                  <div>
+                    <SettingText>Reactive Users</SettingText>
+                  </div>
+                  <ReactiveUser>
+                    <div className="reactive-field-contant">
+                      <TextField
+                        style={{ width: "45px", paddingLeft: "10px" }}
+                        placeholder=" Mins"
+                        value={reativeUser}
+                      />
+                      <TextFieldPlace style={{ width: "70px" }}>
+                        Mins
+                      </TextFieldPlace>
+                      <IoMdArrowDroprightCircle className="arrow-setting" />
+                    </div>
+                  </ReactiveUser>
+                </SettingContant2>
+              </SettingFieldSleepTimer>
+              {/* <Button style="setting-save">Save</Button>
+               */}
+            </SettingField1>
+          </div>
+          <button class="button-82-pushable" role="button">
+            <span class="button-82-shadow"></span>
+            <span class="button-82-edge"></span>
+            <span class="button-82-front text">Save</span>
+          </button>
+        </div>
       </SettingContainer>
     </SettingMainContainer>
   );
