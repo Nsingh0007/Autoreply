@@ -68,7 +68,7 @@ const MessageBar = (props) => {
                     className="del-icon"
                     onClick={() => delhandler(item?._id)}
                   />
-                  <p>Delete</p>
+                  <h3>Delete</h3>
                 </PopupDelField>
                 <div>
                   <MessageEdit item={item} getBotMsg={props.getBotMsg} />

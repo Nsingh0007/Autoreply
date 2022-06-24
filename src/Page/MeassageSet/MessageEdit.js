@@ -4,6 +4,7 @@ import { FiEdit } from "react-icons/fi";
 import Popup from "../../Component/_shared/Popup";
 import Button from "../../Component/CustomButton";
 import { Bot } from "../../mobx/MobxStore";
+import { PopupInput } from "../Style/AddMessageStyle";
 import axios from "axios";
 const MessageEdit = (props) => {
   console.log("--->>>>>>>>>>>>>>>>>>>", JSON.stringify(props?.item));
@@ -45,7 +46,7 @@ const MessageEdit = (props) => {
     <div>
       <div className="popup-edit-field">
         <FiEdit className="edit-icon" onClick={deltogglePopup} />
-        <p>Edit</p>
+        <h3>Edit</h3>
       </div>
       {isDelOpen && (
         <Popup
@@ -61,15 +62,15 @@ const MessageEdit = (props) => {
               >
                 <div className="edit-field">
                   <label className="reply-popup-head">Edit</label>
-                  <input
+                  <PopupInput
                     id="BotWord"
-                    className="popupInput"
                     placeholder="Example Message Set 2"
                     type="text"
                     style={{
-                      width: "200px",
+                      width: "160px",
                       height: "40px",
-                      marginBottom: "10px",
+                      marginBottom: "5px",
+                      Color: "blcak",
                     }}
                     onChange={(e) => {
                       setEditName(e.target.value);
@@ -96,7 +97,7 @@ const MessageEdit = (props) => {
             </div>
           }
           style={{
-            height: "190px",
+            height: "auto",
             width: "auto",
           }}
         />
