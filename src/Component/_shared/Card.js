@@ -5,6 +5,9 @@ export const Card = styled.div`
   width: 263px;
   height: 222px;
   overflow-wrap: anywhere;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+
   overflow-wrap: ;
   padding: 5px;
   overflow-wrap: inherit;
@@ -17,7 +20,7 @@ export const Card = styled.div`
   line-height: 38px;
   background: #000000;
   overflow-wrap: anywhere;
-  margin: 27px;
+
   flex-wrap: wrap;
   font-size: 25px;
   font-weight: 700;

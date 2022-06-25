@@ -11,7 +11,10 @@ import { CardContent, MessageSetAdded } from "../Style/AddMessageStyle";
 
 const MessageList = (props) => {
   const navigate = useNavigate();
-  console.log("props", JSON.stringify(props.users));
+  console.log(
+    "propsyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+    JSON.stringify(props.users)
+  );
 
   return (
     <CardContainer>

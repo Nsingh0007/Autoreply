@@ -18,8 +18,10 @@ import axios from "axios";
 import Popup from "../../../Component/_shared/Popup";
 
 const AddUser = (props) => {
+  const { refresh, setRefresh } = props;
+
   const [botName, setBotName] = useState("");
-  const [disable, setDisable] = useState(false);
+
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   // const [refresh, setRefresh] = useState(false);
@@ -29,14 +31,11 @@ const AddUser = (props) => {
   const handelpopup = () => {
     togglePopup();
   };
-  // useEffect(() => {
-  //   addBotHandler();
-  // }, [refresh]);
 
   const addBotHandler = async (e) => {
-    setIsLoading(true);
     if (botName.trim() === "") {
     } else {
+      setIsLoading(true);
       await axios
         .post("https://autoreplybackend.moreyeahs.in/api/bt/createBt", {
           title: botName,
@@ -49,13 +48,13 @@ const AddUser = (props) => {
 
           // setRefresh(!refresh);
           setIsLoading(false);
+          setRefresh(!refresh);
+          togglePopup();
         })
         .catch((error) => {
           console.log(error);
           setIsLoading(false);
         });
-
-      togglePopup();
     }
   };
 
@@ -103,7 +102,9 @@ const AddUser = (props) => {
                           </Button>
                           <Button
                             role="button"
-                            onClick={handelpopup}
+                            onClick={() => {
+                              handelpopup();
+                            }}
                             style="button-cancil"
                           >
                             Cancel

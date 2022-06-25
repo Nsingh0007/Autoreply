@@ -8,10 +8,11 @@ import { observer } from "mobx-react";
 import LoadingSpinner from "../../Component/Loader/Loader";
 const Dashboard = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     getAllBots();
-  }, []);
+  }, [refresh]);
 
   const getAllBots = async () => {
     try {
@@ -28,6 +29,7 @@ const Dashboard = () => {
       setIsLoading(false);
     }
   };
+
   const addUserHandler = (uname) => {
     var botData = Bot.initialState.bot;
     Bot.setBotName([...botData, { name: uname, id: Math.random().toString() }]);
@@ -40,11 +42,16 @@ const Dashboard = () => {
       ) : (
         <>
           <div>
-            <AddUser addUserHandler={addUserHandler} getAllBots={getAllBots} />
+            <AddUser
+              addUserHandler={addUserHandler}
+              getAllBots={getAllBots}
+              setRefresh={setRefresh}
+              refresh={refresh}
+            />
           </div>
           <div>
             {Bot.initialState.bot.length > 0 && (
-              <UserList bots={Bot.initialState.bot} />
+              <UserList bots={Bot.initialState.bot} getAllBots={getAllBots} />
             )}
           </div>
         </>

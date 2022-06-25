@@ -210,6 +210,19 @@ export const EditPopup = styled.div`
   display: flex;
   justify-content: center;
 `;
+export const Dot = styled.div`
+  width: 40px;
+  height: 232px;
+
+  background: #000000;
+  border: 4px solid #ff0000;
+
+  border-left: none;
+
+  background: #000000;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+`;
 export const PopupEditContant = styled.div`
   display: flex;
   justify-content: center;

@@ -25,14 +25,12 @@ const AddMessageReply = (props) => {
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
-  const handelpopup = () => {
-    togglePopup();
-  };
+  const handelpopup = () => {};
   const ReplyMessagehandler = async (e) => {
-    setIsLoading(true);
     console.log("first");
     if (replyMessageSet.trim() === "") {
     } else {
+      setIsLoading(true);
       props.ReplyMessagehandler(replyMessageSet);
 
       togglePopup();

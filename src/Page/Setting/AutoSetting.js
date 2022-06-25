@@ -17,6 +17,7 @@ import {
   SettingMainContainer,
   SettingText,
 } from "../Style/SettingStyle";
+import { observer } from "mobx-react-lite";
 const label = { inputProps: { "aria-label": "Switch demo" } };
 const AutoSetting = () => {
   const [isCallEnableReply, setIsCallEnableReply] = useState(false);
@@ -52,6 +53,34 @@ const AutoSetting = () => {
     } catch (e) {
       console.log("API CALLING ERROR", e);
     }
+  };
+
+  const handelsave = async () => {
+    console.log("ttttttttttttttttttttttttttttttttttttttt");
+    await axios
+      .put(
+        `https://autoreplybackend.moreyeahs.in/api/setting/updateSettingTable?_id=62a6ca46a28a121a3000018b`,
+        {
+          isCalledReply: isCallEnableReply,
+          isSmsReply: isSMSEnableReply,
+          isMmsReply: isMMSEnableReply,
+          defaultText: defaultText,
+          delayResponse: delayResponse,
+          inActiveTimes: inActiveTimes,
+          disconnectTimes: disconnectTimes,
+          reativeUser: reativeUser,
+          mobile: "887135222",
+        }
+      )
+      .then((res) => {
+        // console.log("is GET MESSAGE DATA", res.data.message),
+        messageSetting(res.data.message);
+        isGetMessage();
+      })
+      .catch((error) => {
+        console.log(error);
+        // setIsLoading(false);
+      });
   };
 
   const messageSetting = async (item) => {
@@ -122,6 +151,7 @@ const AutoSetting = () => {
                 </div>
                 <div className="setting-text-field">
                   <TextField
+                    type="text"
                     style={{ width: "45px" }}
                     placeholder="sec"
                     value={delayResponse}
@@ -203,7 +233,13 @@ const AutoSetting = () => {
                */}
             </SettingField1>
           </div>
-          <button class="button-82-pushable" role="button">
+          <button
+            class="button-82-pushable"
+            role="button"
+            onClick={() => {
+              handelsave();
+            }}
+          >
             <span class="button-82-shadow"></span>
             <span class="button-82-edge"></span>
             <span class="button-82-front text">Save</span>
@@ -214,4 +250,4 @@ const AutoSetting = () => {
   );
 };
 
-export default AutoSetting;
+export default observer(AutoSetting);
