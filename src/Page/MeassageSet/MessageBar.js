@@ -37,6 +37,7 @@ const MessageBar = (props) => {
   };
 
   const delhandler = async (id) => {
+    console.log("first", id);
     await axios
       .delete(
         `https://autoreplybackend.moreyeahs.in/api/bot/deletebot?_id=${props.user._id}`

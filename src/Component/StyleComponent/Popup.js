@@ -20,7 +20,7 @@ export const Box = styled.div`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 export const PopupContainer = styled.div`
-  position: fixed;
+  position: absolute;
 margin-Right:40px
   width: 16%;
   height: auto;

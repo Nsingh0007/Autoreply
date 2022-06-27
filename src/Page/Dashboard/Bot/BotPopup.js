@@ -18,12 +18,14 @@ const BotPopup = (props) => {
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
+  const handelpopup = () => {
+    togglePopup();
+  };
 
   const Botdelhandler = async (id) => {
-    console.log("");
     await axios
       .delete(
-        `https://autoreplybackend.moreyeahs.in/api/bot/deletebot_id=${id}`
+        `https://autoreplybackend.moreyeahs.in/api/bt/deleteBtById?_id=${item._id}`
       )
 
       .then((res) => {
@@ -32,7 +34,8 @@ const BotPopup = (props) => {
           res.data,
           Bot
         );
-        getAllBots();
+        props.getAllBots();
+        togglePopup();
       })
       .catch((err) => console.log(err));
   };
@@ -54,12 +57,16 @@ const BotPopup = (props) => {
                   <MdDeleteForever
                     className="del-icon"
                     //  onClick={() => Botdelhandler(item?._id)}
-                    onClick={() => Botdelhandler()}
+                    onClick={() => {
+                      Botdelhandler(item?._id);
+
+                      // alert(Botdelhandler);
+                    }}
                   />
-                  <h3>Delete</h3>
+                  <h3>Dele</h3>
                 </PopupDelField>
                 <div>
-                  <BotEdit getAllBots={props.getAllBots} />
+                  <BotEdit item={item} getAllBots={props.getAllBots} />
                 </div>
               </PopupEditContant>
             </EditPopup>
@@ -72,13 +79,3 @@ const BotPopup = (props) => {
 };
 
 export default BotPopup;
-
-// 20/06 =>integrate messageSet Delete & Put api , change design popup
-
-// 21/06 => integrate messageReply Delete , error hendling
-
-// 22/06 =>change setting design and error hendling Bot card
-
-// 23/06 =>  integrate Setting api and setting change design
-
-// 24/06 => integrate bot Delete & Put api , design popup (edit & delete)

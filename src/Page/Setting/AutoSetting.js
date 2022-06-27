@@ -39,13 +39,16 @@ const AutoSetting = () => {
 
   const isGetMessage = async () => {
     try {
-      let mobile = 1234567890;
+      let mobile = "1234568978";
       await axios
         .get(
           `https://autoreplybackend.moreyeahs.in/api/setting/getCreateSetting?mobile=${mobile}`
         )
         .then((res) => {
-          console.log("is GET MESSAGE DATA", res.data.message);
+          console.log(
+            "is GET MESSAGE DATA ----------------",
+            res?.data?.message
+          );
           messageSetting(res.data.message);
           // Bot.setMessageSetting(body.res.data);
         })
@@ -55,11 +58,11 @@ const AutoSetting = () => {
     }
   };
 
-  const handelsave = async () => {
-    console.log("ttttttttttttttttttttttttttttttttttttttt");
+  const handelsave = async (id) => {
+    console.log("ttttttttttttttttttttttttttttttttttttttt", id);
     await axios
       .put(
-        `https://autoreplybackend.moreyeahs.in/api/setting/updateSettingTable?_id=62a6ca46a28a121a3000018b`,
+        `https://autoreplybackend.moreyeahs.in/api/setting/updateSettingTable?_id=${id}`,
         {
           isCalledReply: isCallEnableReply,
           isSmsReply: isSMSEnableReply,
@@ -69,12 +72,12 @@ const AutoSetting = () => {
           inActiveTimes: inActiveTimes,
           disconnectTimes: disconnectTimes,
           reativeUser: reativeUser,
-          mobile: "887135222",
+          mobile: "1234568978",
         }
       )
       .then((res) => {
         // console.log("is GET MESSAGE DATA", res.data.message),
-        messageSetting(res.data.message);
+        // messageSetting(res.data.message);
         isGetMessage();
       })
       .catch((error) => {
@@ -155,6 +158,9 @@ const AutoSetting = () => {
                     style={{ width: "45px" }}
                     placeholder="sec"
                     value={delayResponse}
+                    onChange={(e) => {
+                      setDelayResponse(e.target.value);
+                    }}
                   />
                   <TextFieldPlace style={{ width: "70px" }}>Sec</TextFieldPlace>
                 </div>
@@ -173,6 +179,9 @@ const AutoSetting = () => {
                       style={{ width: "45px", paddingLeft: "10px" }}
                       placeholder="min"
                       value={inActiveTimes}
+                      onChange={(e) => {
+                        setInactiveTimer(e.target.value);
+                      }}
                     />{" "}
                     <TextFieldPlace style={{ width: "70px" }}>
                       Mins
@@ -191,6 +200,9 @@ const AutoSetting = () => {
                       }}
                       placeholder="Are You Available ?"
                       value={defaultText}
+                      onChange={(e) => {
+                        setDefaultText(e.target.value);
+                      }}
                     />
                   </div>
                 </SettingContant2>
@@ -203,6 +215,9 @@ const AutoSetting = () => {
                       style={{ width: "45px", paddingLeft: "10px" }}
                       placeholder=" Mins"
                       value={disconnectTimes}
+                      onChange={(e) => {
+                        setDisconnectTimer(e.target.value);
+                      }}
                     />
                     <TextFieldPlace style={{ width: "70px" }}>
                       Mins
@@ -220,6 +235,9 @@ const AutoSetting = () => {
                         style={{ width: "45px", paddingLeft: "10px" }}
                         placeholder=" Mins"
                         value={reativeUser}
+                        onChange={(e) => {
+                          setReactiveUser(e.target.value);
+                        }}
                       />
                       <TextFieldPlace style={{ width: "70px" }}>
                         Mins
@@ -237,7 +255,8 @@ const AutoSetting = () => {
             class="button-82-pushable"
             role="button"
             onClick={() => {
-              handelsave();
+              handelsave(MessageSetting?._id);
+              // alert(MessageSetting)
             }}
           >
             <span class="button-82-shadow"></span>

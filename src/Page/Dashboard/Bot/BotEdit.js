@@ -12,23 +12,27 @@ import { Bot } from "../../../mobx/MobxStore";
 const BotEdit = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDelOpen, setIsDelOpen] = useState(false);
-  const [editBotName, setEditBotName] = useState("");
+  const [editBotName, setEditBotName] = useState();
+  const [botEdit, setBotEdit] = useState(props?.item);
   const deltogglePopup = () => {
     setIsDelOpen(!isDelOpen);
   };
 
   const BotEdithandler = async (id) => {
-    await Axios.put(
-      `https://autoreplybackend.moreyeahs.in/api/bt/updateBtTable?_id=${id}`,
-      { title: editBotName }
-    )
+    console.log("first", botEdit._id);
+    await axios
+
+      .put(
+        `https://autoreplybackend.moreyeahs.in/api/bt/updateBtTable?_id=${botEdit._id}`,
+        { title: editBotName }
+      )
       .then((res) => {
         console.log(
           "GET MEESAGE SET DATA--->>>>>>>>>>>>>>>>>>>>>>>>>",
           res.data.message
         );
-        Bot.setBotName(res.data.message);
-        getAllBots();
+        // Bot.setBotName(res.data.message);
+        // getAllBots();
       })
       .catch((error) => {
         console.log(error);
@@ -77,8 +81,8 @@ const BotEdit = (props) => {
                     <Button
                       className="popupButton"
                       style="edit-button"
-                      onClick={() => {
-                        BotEdithandler();
+                      onClick={(e) => {
+                        BotEdithandler(e.target.value);
                       }}
                     >
                       Edit

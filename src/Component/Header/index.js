@@ -22,10 +22,11 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderField>
-        {ShowBackIcon && (
+        {ShowBackIcon ? (
           <MdArrowBack className="Back-icon" onClick={() => Navigate(-1)} />
+        ) : (
+          <div></div>
         )}
-        <div></div>
         <Headerheading>Auto Reply</Headerheading>
         <div></div>
         {/* <Logout>
