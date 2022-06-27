@@ -17,22 +17,29 @@ const UserList = (props) => {
   return (
     <CardContainer>
       <CardField>
-        {props.bots.map((user, index) => (
-          <CardContent>
-            <Card
-              style={{ borderRight: "none", borderRadius: "15px 0px 0px 15px" }}
-              key={user.id}
-              onClick={() =>
-                navigate(`/messageset`, { state: { index: user._id } })
-              }
-            >
-              {user.title}
-            </Card>
-            <Dot>
-              <BotPopup user={user} addUserHandler={props.addUserHandler} />
-            </Dot>
-          </CardContent>
-        ))}
+        {props.bots.length > 0 && (
+          <>
+            {props?.bots?.map((user, index) => (
+              <CardContent>
+                <Card
+                  style={{
+                    borderRight: "none",
+                    borderRadius: "15px 0px 0px 15px",
+                  }}
+                  key={user.id}
+                  onClick={() =>
+                    navigate(`/messageset`, { state: { index: user._id } })
+                  }
+                >
+                  {user.title}
+                </Card>
+                <Dot>
+                  <BotPopup user={user} addUserHandler={props.addUserHandler} />
+                </Dot>
+              </CardContent>
+            ))}
+          </>
+        )}
       </CardField>
     </CardContainer>
   );

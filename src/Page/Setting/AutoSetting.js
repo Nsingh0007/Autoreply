@@ -76,7 +76,7 @@ const AutoSetting = () => {
       )
       .then(async (res) => {
         // messageSetting(res.data.data);
-        await isGetMessage();
+        // await isGetMessage();
       })
       .catch((error) => {
         console.log(error);

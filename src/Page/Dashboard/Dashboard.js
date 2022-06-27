@@ -20,7 +20,8 @@ const Dashboard = () => {
       await axios
         .get("https://autoreplybackend.moreyeahs.in/api/bt/getBt")
         .then((res) => {
-          if (res.data.message) {
+          if (res.data.message !== "No Record found") {
+            console.error("hello", res.data.message);
             Bot.setBotName(res.data.message);
           } else {
             Bot.setBotName([]);
