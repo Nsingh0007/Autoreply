@@ -20,6 +20,7 @@ export const Card = styled.div`
   line-height: 38px;
   background: #000000;
   overflow-wrap: anywhere;
+  margin-bottom: 20px;
 
   flex-wrap: wrap;
   font-size: 25px;

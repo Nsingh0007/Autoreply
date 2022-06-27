@@ -24,13 +24,16 @@ const AddUser = (props) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  // const [refresh, setRefresh] = useState(false);
+
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
   const handelpopup = () => {
     togglePopup();
   };
+  useEffect(() => {
+    addBotHandler();
+  }, [refresh]);
 
   const addBotHandler = async (e) => {
     if (botName.trim() === "") {
