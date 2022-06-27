@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdDeleteForever } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
 
@@ -13,10 +13,14 @@ const BotEdit = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDelOpen, setIsDelOpen] = useState(false);
   const [editBotName, setEditBotName] = useState();
+  const [refresh, setRefresh] = useState(false);
   const [botEdit, setBotEdit] = useState(props?.item);
   const deltogglePopup = () => {
     setIsDelOpen(!isDelOpen);
   };
+  // useEffect(() => {
+  //   props.getAllBots();
+  // });
 
   const BotEdithandler = async (id) => {
     console.log("first", botEdit._id);
@@ -26,13 +30,13 @@ const BotEdit = (props) => {
         `https://autoreplybackend.moreyeahs.in/api/bt/updateBtTable?_id=${botEdit._id}`,
         { title: editBotName }
       )
-      .then((res) => {
+      .then(async (res) => {
         console.log(
           "GET MEESAGE SET DATA--->>>>>>>>>>>>>>>>>>>>>>>>>",
           res.data.message
         );
-        // Bot.setBotName(res.data.message);
-        // getAllBots();
+        await props.addUserHandler();
+        props.getAllBots();
       })
       .catch((error) => {
         console.log(error);

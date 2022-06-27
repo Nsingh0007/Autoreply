@@ -45,10 +45,8 @@ const AutoSetting = () => {
           `https://autoreplybackend.moreyeahs.in/api/setting/getCreateSetting?mobile=${mobile}`
         )
         .then((res) => {
-          console.log(
-            "is GET MESSAGE DATA ----------------",
-            res?.data?.message
-          );
+          console.log("is GET MESSAGE DATA", res.data);
+          setMessageSetting(res.data.message);
           messageSetting(res.data.message);
           // Bot.setMessageSetting(body.res.data);
         })
@@ -59,7 +57,8 @@ const AutoSetting = () => {
   };
 
   const handelsave = async (id) => {
-    console.log("ttttttttttttttttttttttttttttttttttttttt", id);
+    console.log("ttttttttttttttttttttttttttttttttttttttt", MessageSetting?._id);
+    let mobile = "1234568978";
     await axios
       .put(
         `https://autoreplybackend.moreyeahs.in/api/setting/updateSettingTable?_id=${id}`,
@@ -72,13 +71,12 @@ const AutoSetting = () => {
           inActiveTimes: inActiveTimes,
           disconnectTimes: disconnectTimes,
           reativeUser: reativeUser,
-          mobile: "1234568978",
+          mobile: mobile,
         }
       )
-      .then((res) => {
-        // console.log("is GET MESSAGE DATA", res.data.message),
-        // messageSetting(res.data.message);
-        isGetMessage();
+      .then(async (res) => {
+        // messageSetting(res.data.data);
+        await isGetMessage();
       })
       .catch((error) => {
         console.log(error);
@@ -87,6 +85,7 @@ const AutoSetting = () => {
   };
 
   const messageSetting = async (item) => {
+    console.log(">>>>>>>>>>>>>>>>ITEM>>>>>>", item);
     setIsCallEnableReply(item?.isCallEnableReply);
     setIsMMSEnableReply(item?.isMMSEnableReply);
     setIsSMSEnableReply(item?.isSMSEnableReply);

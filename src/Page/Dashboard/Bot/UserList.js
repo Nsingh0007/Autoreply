@@ -29,7 +29,7 @@ const UserList = (props) => {
               {user.title}
             </Card>
             <Dot>
-              <BotPopup user={user} getAllBots={props.getAllBots} />
+              <BotPopup user={user} addUserHandler={props.addUserHandler} />
             </Dot>
           </CardContent>
         ))}

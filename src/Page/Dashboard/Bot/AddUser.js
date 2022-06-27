@@ -31,9 +31,9 @@ const AddUser = (props) => {
   const handelpopup = () => {
     togglePopup();
   };
-  useEffect(() => {
-    addBotHandler();
-  }, [refresh]);
+  // useEffect(() => {
+  //   addBotHandler();
+  // }, []);
 
   const addBotHandler = async (e) => {
     if (botName.trim() === "") {

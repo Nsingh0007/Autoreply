@@ -181,22 +181,21 @@ export const CardContainer = styled.div`
   align-items: center;
 `;
 export const CardField = styled.div`
-  width: 94%;
+  width: 91%;
   padding-left: 40px;
   display: flex;
-  justify-content: flex-start;
-  gap: 10px 33px;
+
   margin-top: 250px;
   flex-wrap: wrap;
 `;
 export const CardContent = styled.div`
   display: flex;
-
+  margin: 20px;
   flex-wrap: wrap;
 `;
 export const MessageSetAdded = styled.div`
   width: 50px;
-  height: 80px;
+  min-height: 200px;
   margin-top: 20px;
   background: #000000;
   border: 3px solid #ff0000;

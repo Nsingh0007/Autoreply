@@ -31,7 +31,13 @@ const MessageReplyList1 = (props) => {
       <CardField>
         {props?.users?.map((user) => (
           <CardContent>
-            <Card key={user.id}>{user?.messageTitle}</Card>
+            <Card key={user.id}>
+              {user?.messageTitle}
+              {/* <MessageReplyBar
+                user={user}
+                getMessageReply={props.getMessageReply}
+              /> */}
+            </Card>
 
             <MessageSetAdded>
               <MessageReplyBar

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
 import { HiDotsHorizontal } from "react-icons/hi";
 import Popup from "../../../Component/_shared/Popup";
 import axios from "axios";
@@ -15,6 +16,7 @@ const BotPopup = (props) => {
   const [isOpen, setIsOpen] = useState("");
   const [setDelt, setSetDelt] = useState("");
   const [item, setItem] = useState(props?.user);
+  const [refresh, setRefresh] = useState(false);
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
@@ -22,19 +24,23 @@ const BotPopup = (props) => {
     togglePopup();
   };
 
+  // useEffect(() => {
+  //   props.getAllBots();
+  // });
+
   const Botdelhandler = async (id) => {
     await axios
       .delete(
         `https://autoreplybackend.moreyeahs.in/api/bt/deleteBtById?_id=${item._id}`
       )
-
-      .then((res) => {
+      .then(async (res) => {
         console.log(
           "delt reply message reply ===>>>>>>>>>>>>>>>>>>",
           res.data,
           Bot
         );
-        props.getAllBots();
+        await props.addUserHandler();
+        setRefresh(!refresh);
         togglePopup();
       })
       .catch((err) => console.log(err));
@@ -56,17 +62,14 @@ const BotPopup = (props) => {
                 <PopupDelField>
                   <MdDeleteForever
                     className="del-icon"
-                    //  onClick={() => Botdelhandler(item?._id)}
                     onClick={() => {
                       Botdelhandler(item?._id);
-
-                      // alert(Botdelhandler);
                     }}
                   />
-                  <h3>Dele</h3>
+                  <h3>Delete</h3>
                 </PopupDelField>
                 <div>
-                  <BotEdit item={item} getAllBots={props.getAllBots} />
+                  <BotEdit item={item} addUserHandler={props.addUserHandler} />
                 </div>
               </PopupEditContant>
             </EditPopup>

@@ -67,11 +67,11 @@ export const SettingMainContainer = styled.div`
 `;
 export const Card = styled.div`
   width: 260px;
-  height: auto;
+  min-height: 200px;
   border: 3px solid #ff0000;
   margin-top: 20px;
   overflow-wrap: anywhere;
-
+  padding: 10px;
   line-height: 18px;
   color: white;
   border-radius: 15px;

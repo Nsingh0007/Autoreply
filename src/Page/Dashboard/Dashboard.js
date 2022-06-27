@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     getAllBots();
-  }, [refresh]);
+  }, []);
 
   const getAllBots = async () => {
     try {
@@ -20,8 +20,11 @@ const Dashboard = () => {
       await axios
         .get("https://autoreplybackend.moreyeahs.in/api/bt/getBt")
         .then((res) => {
-          console.log("GET BOAT DATA --?>>>>>>>>>>>>>", res.data.message);
-          Bot.setBotName(res.data.message);
+          if (res.data.message) {
+            Bot.setBotName(res.data.message);
+          } else {
+            Bot.setBotName([]);
+          }
           setIsLoading(false);
         });
     } catch (error) {
@@ -31,8 +34,9 @@ const Dashboard = () => {
   };
 
   const addUserHandler = (uname) => {
-    var botData = Bot.initialState.bot;
-    Bot.setBotName([...botData, { name: uname, id: Math.random().toString() }]);
+    // var botData = Bot.initialState.bot;
+    // Bot.setBotName([...botData, { name: uname, id: Math.random().toString() }]);
+    getAllBots();
   };
 
   return (
@@ -42,16 +46,14 @@ const Dashboard = () => {
       ) : (
         <>
           <div>
-            <AddUser
-              addUserHandler={addUserHandler}
-              getAllBots={getAllBots}
-              setRefresh={setRefresh}
-              refresh={refresh}
-            />
+            <AddUser addUserHandler={addUserHandler} />
           </div>
           <div>
             {Bot.initialState.bot.length > 0 && (
-              <UserList bots={Bot.initialState.bot} getAllBots={getAllBots} />
+              <UserList
+                bots={Bot.initialState.bot}
+                addUserHandler={addUserHandler}
+              />
             )}
           </div>
         </>
