@@ -14,6 +14,9 @@ const MessageEdit = (props) => {
   const deltogglePopup = () => {
     setIsDelOpen(!isDelOpen);
   };
+  const Cancilhandelpopup = () => {
+    deltogglePopup();
+  };
 
   // const togglePopup = (props) => {};
   const handelpopup = async (id) => {
@@ -89,6 +92,9 @@ const MessageEdit = (props) => {
                     className="popup-Cancel-Button"
                     role="button"
                     style="cancil-button"
+                    onClick={() => {
+                      Cancilhandelpopup();
+                    }}
                   >
                     Cancel
                   </Button>

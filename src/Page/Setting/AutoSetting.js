@@ -35,6 +35,10 @@ const AutoSetting = () => {
   useEffect(() => {
     // messageSetting();
     isGetMessage();
+    const timer = setTimeout(() => {
+      console.log("This will run after 1 second!");
+    }, 1000);
+    return () => clearTimeout(timer);
   }, []);
 
   const isGetMessage = async () => {

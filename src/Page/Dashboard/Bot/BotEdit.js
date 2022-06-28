@@ -21,6 +21,9 @@ const BotEdit = (props) => {
   // useEffect(() => {
   //   props.getAllBots();
   // });
+  const cancilhandel = () => {
+    deltogglePopup();
+  };
 
   const BotEdithandler = async (id) => {
     console.log("first", botEdit._id);
@@ -95,6 +98,9 @@ const BotEdit = (props) => {
                       className="popup-Cancel-Button"
                       role="button"
                       style="cancil-button"
+                      onClick={() => {
+                        cancilhandel();
+                      }}
                     >
                       Cancel
                     </Button>
