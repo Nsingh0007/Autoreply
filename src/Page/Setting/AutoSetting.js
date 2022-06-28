@@ -35,18 +35,18 @@ const AutoSetting = () => {
   useEffect(() => {
     // messageSetting();
     isGetMessage();
-    const timer = setTimeout(() => {
-      console.log("This will run after 1 second!");
-    }, 1000);
-    return () => clearTimeout(timer);
+    // const timer = setTimeout(() => {
+    //   console.log(" 1 second");
+    // }, 1000);
+    // return () => clearTimeout(timer);
   }, []);
 
   const isGetMessage = async () => {
     try {
-      let mobile = "1234568978";
+      let mobile = "1234567890";
       await axios
         .get(
-          `https://autoreplybackend.moreyeahs.in/api/setting/getCreateSetting?mobile=${mobile}`
+          `https://d7f7-103-15-67-130.ngrok.io/api/setting/getCreateSetting?mobile=${mobile}`
         )
         .then((res) => {
           console.log("is GET MESSAGE DATA", res.data);
@@ -62,10 +62,10 @@ const AutoSetting = () => {
 
   const handelsave = async (id) => {
     console.log("ttttttttttttttttttttttttttttttttttttttt", MessageSetting?._id);
-    let mobile = "1234568978";
+    let mobile = "1234567890";
     await axios
       .put(
-        `https://autoreplybackend.moreyeahs.in/api/setting/updateSettingTable?_id=${id}`,
+        `https://d7f7-103-15-67-130.ngrok.io/api/setting/updateSettingTable?_id=${id}`,
         {
           isCalledReply: isCallEnableReply,
           isSmsReply: isSMSEnableReply,
