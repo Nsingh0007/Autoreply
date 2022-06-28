@@ -33,18 +33,32 @@ const MessageReply = () => {
   const ReplyMessagehandler = async (uname) => {
     try {
       setIsLoading(true);
-      let body = {
+
+      let body = [];
+      Bot.initialState.messageReply.map((item) => {
+        var botList = {
+          botId: item.botId,
+          messageTitle: item.messageTitle,
+        };
+        body.push(botList);
+      });
+      let Finalbody = {
         msgList: [
-          ...Bot.initialState.messageReply,
+          ...body,
           { botId: location.state.index, messageTitle: uname },
         ],
       };
+      console.log("FINAL", Finalbody);
       await axios
         .post(
           "https://autoreplybackend.moreyeahs.in/api/message/createMessage",
-          body
+          Finalbody
         )
         .then((res) => {
+          console.log(
+            "hellooooo0000000000000000000000000000000000",
+            JSON.stringify(Finalbody)
+          );
           setRefresh(!refresh);
           console.log("Posting data", res.data);
 

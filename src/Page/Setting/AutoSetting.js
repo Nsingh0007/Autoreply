@@ -36,6 +36,7 @@ const AutoSetting = () => {
     // messageSetting();
     isGetMessage();
     // const timer = setTimeout(() => {
+
     //   console.log(" 1 second");
     // }, 1000);
     // return () => clearTimeout(timer);
@@ -46,7 +47,7 @@ const AutoSetting = () => {
       let mobile = "1234567890";
       await axios
         .get(
-          `https://d7f7-103-15-67-130.ngrok.io/api/setting/getCreateSetting?mobile=${mobile}`
+          `https://autoreplybackend.moreyeahs.in/api/setting/getCreateSetting?mobile=${mobile}`
         )
         .then((res) => {
           console.log("is GET MESSAGE DATA", res.data);
@@ -65,7 +66,7 @@ const AutoSetting = () => {
     let mobile = "1234567890";
     await axios
       .put(
-        `https://d7f7-103-15-67-130.ngrok.io/api/setting/updateSettingTable?_id=${id}`,
+        `https://autoreplybackend.moreyeahs.in/api/setting/updateSettingTable?_id=${id}`,
         {
           isCalledReply: isCallEnableReply,
           isSmsReply: isSMSEnableReply,

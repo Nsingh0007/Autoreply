@@ -54,18 +54,18 @@ export const SubText = styled.h1`
   color: red;
   font-weight: 600;
 
-  @media only screen and (max-width: 700px) {
-    font-size: 30px;
+  @media only screen and (max-width: 800px) {
+    font-size: 32px;
     font-weight: 600;
     line-height: 18px;
   }
   @media only screen and (max-width: 510px) {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     line-height: 18px;
   }
   @media only screen and (max-width: 374px) {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 18px;
   }
