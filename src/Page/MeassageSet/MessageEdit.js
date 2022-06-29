@@ -67,7 +67,7 @@ const MessageEdit = (props) => {
                   <label className="reply-popup-head">Edit</label>
                   <PopupInput
                     id="BotWord"
-                    placeholder="Example Message Set 2"
+                    placeholder="Edit Message Set "
                     type="text"
                     style={{
                       width: "160px",

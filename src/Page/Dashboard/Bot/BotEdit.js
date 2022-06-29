@@ -71,7 +71,8 @@ const BotEdit = (props) => {
                     <label className="reply-popup-head">Edit</label>
                     <PopupInput
                       id="BotWord"
-                      placeholder="Example Message Set 2"
+                      autoComplete={botEdit._id}
+                      placeholder="Edit Bot Set "
                       type="text"
                       onChange={(e) => {
                         setEditBotName(e.target.value);
