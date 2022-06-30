@@ -10,9 +10,11 @@ import { PopupInput } from "../../Style/AddMessageStyle";
 import { Bot } from "../../../mobx/MobxStore";
 
 const BotEdit = (props) => {
+  console.log("ffffffffffffffffffffffffirst", props.user.title);
+
   const [isOpen, setIsOpen] = useState(false);
   const [isDelOpen, setIsDelOpen] = useState(false);
-  const [editBotName, setEditBotName] = useState();
+  const [editBotName, setEditBotName] = useState(props.user.title);
   const [refresh, setRefresh] = useState(false);
   const [botEdit, setBotEdit] = useState(props?.item);
   const deltogglePopup = () => {
@@ -71,7 +73,7 @@ const BotEdit = (props) => {
                     <label className="reply-popup-head">Edit</label>
                     <PopupInput
                       id="BotWord"
-                      autoComplete={botEdit._id}
+                      value={editBotName}
                       placeholder="Edit Bot Set "
                       type="text"
                       onChange={(e) => {

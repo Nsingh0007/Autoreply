@@ -69,7 +69,12 @@ const BotPopup = (props) => {
                   <h3>Delete</h3>
                 </PopupDelField>
                 <div>
-                  <BotEdit item={item} addUserHandler={props.addUserHandler} />
+                  <BotEdit
+                    item={item}
+                    addUserHandler={props.addUserHandler}
+                    AddUser={props.AddUser}
+                    user={props.user}
+                  />
                 </div>
               </PopupEditContant>
             </EditPopup>

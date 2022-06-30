@@ -34,7 +34,11 @@ const UserList = (props) => {
                   {user.title}
                 </Card>
                 <Dot>
-                  <BotPopup user={user} addUserHandler={props.addUserHandler} />
+                  <BotPopup
+                    AddUser={props.AddUser}
+                    user={user}
+                    addUserHandler={props.addUserHandler}
+                  />
                 </Dot>
               </CardContent>
             ))}

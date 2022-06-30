@@ -6,7 +6,7 @@ import AddUser from "./Bot/AddUser";
 import { Bot } from "../../mobx/MobxStore";
 import { observer } from "mobx-react";
 import LoadingSpinner from "../../Component/Loader/Loader";
-const Dashboard = () => {
+const Dashboard = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [refresh, setRefresh] = useState(false);
 
@@ -54,6 +54,7 @@ const Dashboard = () => {
               <UserList
                 bots={Bot.initialState.bot}
                 addUserHandler={addUserHandler}
+                AddUser={props.AddUser}
               />
             )}
           </div>

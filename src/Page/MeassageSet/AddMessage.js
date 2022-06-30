@@ -68,7 +68,7 @@ const AddMessage = (props) => {
                       <ReplyPopupHead>Add New Message Add</ReplyPopupHead>
                       <PopupInput
                         id="BotWord"
-                        placeholder="Example Message Set 2"
+                        placeholder="Example Message Set "
                         type="text"
                         onChange={(e) => {
                           setMessageSet(e.target.value);

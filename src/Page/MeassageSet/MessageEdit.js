@@ -10,7 +10,7 @@ const MessageEdit = (props) => {
   console.log("--->>>>>>>>>>>>>>>>>>>", JSON.stringify(props?.item));
   const [isOpen, setIsOpen] = useState(false);
   const [isDelOpen, setIsDelOpen] = useState(false);
-  const [editName, setEditName] = useState("");
+  const [editName, setEditName] = useState(props.user.title);
   const deltogglePopup = () => {
     setIsDelOpen(!isDelOpen);
   };
@@ -66,6 +66,7 @@ const MessageEdit = (props) => {
                 <div className="edit-field">
                   <label className="reply-popup-head">Edit</label>
                   <PopupInput
+                    value={editName}
                     id="BotWord"
                     placeholder="Edit Message Set "
                     type="text"

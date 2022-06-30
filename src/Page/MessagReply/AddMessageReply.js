@@ -25,7 +25,9 @@ const AddMessageReply = (props) => {
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
-  const handelpopup = () => {};
+  const handelpopup = () => {
+    togglePopup();
+  };
   const ReplyMessagehandler = async (e) => {
     console.log("first");
     if (replyMessageSet.trim() === "") {
@@ -65,7 +67,7 @@ const AddMessageReply = (props) => {
                             <ReplyPopupHead>Add New Reply</ReplyPopupHead>
                             <PopupInput
                               id="BotWord"
-                              placeholder="Example Hello "
+                              placeholder="Example Message Reply "
                               type="text"
                               onChange={(e) => {
                                 setReplyMessageSet(e.target.value);

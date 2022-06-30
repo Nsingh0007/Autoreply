@@ -72,7 +72,11 @@ const MessageBar = (props) => {
                   <h3>Delete</h3>
                 </PopupDelField>
                 <div>
-                  <MessageEdit item={item} getBotMsg={props.getBotMsg} />
+                  <MessageEdit
+                    user={props.user}
+                    item={item}
+                    getBotMsg={props.getBotMsg}
+                  />
                 </div>
               </PopupEditContant>
             </EditPopup>

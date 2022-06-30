@@ -3,7 +3,8 @@ import axios from "axios";
 import { ReactiveUser, TextField, TextFieldPlace } from "../Style/SettingStyle";
 import Button from "../../Component/CustomButton";
 import Switch from "@mui/material/Switch";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Bot } from "../../mobx/MobxStore";
 import { IoMdArrowDroprightCircle } from "react-icons/io";
 import {
@@ -82,6 +83,7 @@ const AutoSetting = () => {
       .then(async (res) => {
         // messageSetting(res.data.data);
         // await isGetMessage();
+        toast("Setting Save Successfully!");
       })
       .catch((error) => {
         console.log(error);
@@ -136,7 +138,7 @@ const AutoSetting = () => {
                   />
                 </div>
               </SettingContant1>
-              <SettingContant1>
+              {/* <SettingContant1>
                 <div>
                   <SettingText>Enable MMS Reply</SettingText>
                 </div>
@@ -149,7 +151,7 @@ const AutoSetting = () => {
                     value={isMMSEnableReply}
                   />
                 </div>
-              </SettingContant1>
+              </SettingContant1> */}
 
               <SettingLabel>Delay Response</SettingLabel>
               <SettingContant2>
@@ -174,7 +176,7 @@ const AutoSetting = () => {
               <SettingFieldSleepTimer>
                 <SettingLabel>Sleep Timer</SettingLabel>
 
-                <SettingContant2 style={{ marginRight: "75px" }}>
+                <SettingContant2>
                   <div>
                     <SettingText>Inactive Times</SettingText>
                   </div>
@@ -192,7 +194,7 @@ const AutoSetting = () => {
                     </TextFieldPlace>
                   </div>
                 </SettingContant2>
-                <SettingContant2 style={{ marginRight: "75px" }}>
+                <SettingContant2>
                   <div>
                     <SettingText>Default Text</SettingText>
                   </div>
@@ -210,7 +212,7 @@ const AutoSetting = () => {
                     />
                   </div>
                 </SettingContant2>
-                <SettingContant2 style={{ marginRight: "75px" }}>
+                <SettingContant2>
                   <div>
                     <SettingText>Disconnection Timer</SettingText>
                   </div>
@@ -235,7 +237,7 @@ const AutoSetting = () => {
                   </div>
                   <ReactiveUser>
                     <div className="reactive-field-contant">
-                      <TextField
+                      {/* <TextField
                         style={{ width: "45px", paddingLeft: "10px" }}
                         placeholder=" Mins"
                         value={reativeUser}
@@ -245,7 +247,7 @@ const AutoSetting = () => {
                       />
                       <TextFieldPlace style={{ width: "70px" }}>
                         Mins
-                      </TextFieldPlace>
+                      </TextFieldPlace> */}
                       <IoMdArrowDroprightCircle className="arrow-setting" />
                     </div>
                   </ReactiveUser>
@@ -269,6 +271,7 @@ const AutoSetting = () => {
           </button>
         </div>
       </SettingContainer>
+      <ToastContainer />
     </SettingMainContainer>
   );
 };
