@@ -1,5 +1,5 @@
 
-body {background-color:black;
+body {background-color:white;
   padding: 0%;
   margin: 0%;
 
@@ -89,10 +89,10 @@ body {background-color:black;
    width: 160px;
   height: 60px; 
    margin: 20px;
-  background: #020202;
-  border: 3px solid #FF0000;
+  background:#C1C1C1;
+  border: 3px solid  gray;
   border-radius: 85px;
-color:red;
+color:black;
 padding: 15px;
 padding-left:20px ;
 padding-right: 20px;
@@ -194,6 +194,7 @@ line-height: 22px;
   background-color: #fff;
   border-color: #3b49df;
   box-shadow: 1px 1px 0 #3b49df;
+
 }
 
 
@@ -325,18 +326,18 @@ margin-left:15px;
  
 }
 .Back-icon{
-color: red;
+color:#C1C1C1;
 background-color:black;
-border: 2px solid red;
+border: 2px solid #C1C1C1;
   align-items: flex-start;
   width:35px;
   height:35px;
   border-radius:50%;
 }
 .del-icon{
-  color: red ;
+  color: white;
 
-  border: 2px solid red;
+  border: 2px solid white;
     align-items: flex-start;
     width:25px;
     height:25px;
@@ -345,8 +346,8 @@ border: 2px solid red;
 margin: 10px;
   }
   .edit-icon{
-    color: red ;
-    border: 2px solid red;
+    color: white ;
+    border: 2px solid white;
     margin: 10px;
     
       align-items: flex-start;
@@ -593,11 +594,11 @@ margin: 5px;}
 
     }
 .button-submit{
-  background-color:red;
+  background-color:white;
   border-radius: 4px;
   border-style: none;
   box-sizing: border-box;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   display: inline-block;
   font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
@@ -622,11 +623,11 @@ margin: 5px;}
 }
 .edit-button{
   height: auto;
-  background-color:red;
+  background-color:white;
   border-radius: 4px;
   border-style: none;
   box-sizing: border-box;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   display: inline-block;
   font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
@@ -651,11 +652,11 @@ margin: 5px;}
 .cancil-button{
 
   height: auto;
-  background-color:red;
+  background-color:white;
   border-radius: 4px;
   border-style: none;
   box-sizing: border-box;
-  color: #fff;
+  color: black;
   cursor: pointer;
   display: inline-block;
   font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
@@ -681,10 +682,10 @@ margin: 5px;}
   width: auto;
   height: 60px; 
    margin: 20px;
-  background: #020202;
-  border: 3px solid #FF0000;
+  background: #C1C1C1C1;
+  border: 3px solid gray;
   border-radius: 85px;
-color:red;
+color:bla;
 padding: 15px;
 padding-left:20px ;
 padding-right: 20px;
@@ -700,11 +701,11 @@ line-height: 22px;
 }
 
 .button-cancil{
-  background-color:red;
+  background-color:white;
   border-radius: 4px;
   border-style: none;
   box-sizing: border-box;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   display: inline-block;
   font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
@@ -841,7 +842,7 @@ width: 10px;
   width: 40px;
   height: 40px;
   color: 
-red;
+black;
 
  margin-top: 5px;
 
@@ -850,6 +851,7 @@ red;
 .arrow-setting{
   width: 80px;;
   height: 60px;
+color: #282c34;
 }
 .delet{
 border:none;
@@ -896,10 +898,11 @@ background-color: #282c34;
   border-radius: 12px;
   background: linear-gradient(
     to left,
-    rgb(231, 86, 86) 0%,
+    #C9C9C9
+    /* rgb(231, 86, 86) 0%,
     rgb(243, 73, 73) 8%,
     rgb(142, 17, 17) 92%,
-    rgb(244, 10, 10) 100%
+    rgb(244, 10, 10) 100% */
   );
 }
 
@@ -910,7 +913,7 @@ background-color: #282c34;
   border-radius: 12px;
   font-size: 1.1rem;
   color: white;
-  background: rgb(240, 0, 0);
+  background: #C9C9C9(240, 0, 0);
   will-change: transform;
   transform: translateY(-4px);
   transition:

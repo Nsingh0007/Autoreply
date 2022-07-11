@@ -24,7 +24,7 @@ export const SettingMainContainer = styled.div`
   padding: 0;
   display: flex;
   justify-content: center;
-  background-color: black;
+  background-color: white;
 `;
 export const SettingContainer = styled.div`
   width: 80%;
@@ -35,10 +35,10 @@ export const SettingContainer = styled.div`
   margin-top: 200px;
 
   color: red;
-  background-color: black;
+  background-color: #c1c1c1;
   padding: 30px;
   border-radius: 30px;
-  border: 5px solid red;
+  border: 5px solid gray;
   @media only screen and (max-width: 1300px) {
     width: 82%;
     height: auto;
@@ -116,6 +116,7 @@ export const SettingContant2 = styled.div`
 export const SettingLabel = styled.div`
   font-size: 40px;
   font-weight: 750;
+  color: black;
   margin-top: 40px;
   @media only screen and (max-width: 1700px) {
     font-size: 32px;
@@ -131,6 +132,7 @@ export const SettingLabel = styled.div`
 export const SettingText = styled.div`
   font-size: 30px;
   font-weight: 750;
+  color: #656565;
   opacity: 0.8;
   @media only screen and (max-width: 1700px) {
     font-size: 26px;
@@ -161,7 +163,7 @@ export const SettingTextField = styled.div`
 `;
 export const TextFieldPlace = styled.div`
   border-radius: 15px;
-  background-color: #bbbcbc;
+  background-color: white;
   height: 50px;
   line-height: normal;
   color: red;
@@ -185,7 +187,7 @@ export const TextField = styled.input`
   border: none;
   border-radius: 15px;
   border-right: none;
-  background-color: #bbbcbc;
+  background-color: #white;
   height: 50px;
   line-height: normal;
   color: #282828;

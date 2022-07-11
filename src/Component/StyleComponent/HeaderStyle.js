@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
   opacity: 0.8;
   justify-content: center;
   align-items: center;
-  background: black;
+  background: white;
 
   position: fixed;
 

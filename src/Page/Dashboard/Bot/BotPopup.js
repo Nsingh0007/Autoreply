@@ -66,7 +66,7 @@ const BotPopup = (props) => {
                       Botdelhandler(item?._id);
                     }}
                   />
-                  <h3>Delete</h3>
+                  <h3 style={{ color: "white" }}>Delete</h3>
                 </PopupDelField>
                 <div>
                   <BotEdit

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import MessageRelyEdit from "./MessageRelyEdit";
 import { MdDeleteForever } from "react-icons/md";
 
 import { HiDotsHorizontal } from "react-icons/hi";
@@ -63,6 +63,14 @@ const MessageReplyBar = (props) => {
                   />
                   <p>Delete</p>
                 </PopupDelField>
+                <div>
+                  <MessageRelyEdit
+                    // item={item}
+                    getMessageReply={props.getMessageReply}
+                    // AddUser={props.AddUser}
+                    user={props.user}
+                  />
+                </div>
               </PopupEditContant>
             </EditPopup>
           }

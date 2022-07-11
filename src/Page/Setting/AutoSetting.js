@@ -118,8 +118,8 @@ const AutoSetting = () => {
                   <Switch
                     {...label}
                     defaultChecked
-                    style={{ color: "red" }}
-                    color="error"
+                    style={{ color: "#212F3D" }}
+                    color="default"
                     value={isCallEnableReply}
                   />
                 </div>
@@ -132,8 +132,8 @@ const AutoSetting = () => {
                   <Switch
                     {...label}
                     defaultChecked
-                    style={{ color: "red" }}
-                    color="error"
+                    style={{ color: "#212F3D" }}
+                    color="default"
                     value={isSMSEnableReply}
                   />
                 </div>
@@ -269,6 +269,7 @@ const AutoSetting = () => {
             <span class="button-82-edge"></span>
             <span class="button-82-front text">Save</span>
           </button>
+          {/* Ghanendra */}
         </div>
       </SettingContainer>
       <ToastContainer />

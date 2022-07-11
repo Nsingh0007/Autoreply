@@ -33,7 +33,6 @@ const AddMessage = (props) => {
   };
 
   const addMessageHandler = async (e) => {
-    console.log("first");
     if (messageSet.trim() === "") {
     } else {
       props.addMessageHandler(messageSet);

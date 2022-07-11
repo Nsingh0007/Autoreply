@@ -9,10 +9,10 @@ import BotPopup from "./BotPopup";
 
 const UserList = (props) => {
   const navigate = useNavigate();
-  console.log(
-    "propshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
-    JSON.stringify(props.users)
-  );
+  // console.log(
+  //   "propshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhkt",
+  //   JSON.stringify(props.users)
+  // );
 
   return (
     <CardContainer>

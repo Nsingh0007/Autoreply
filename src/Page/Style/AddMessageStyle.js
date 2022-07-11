@@ -18,7 +18,7 @@ export const SubHeaderContainer = styled.div`
 //   align-items: center;
 // `;
 export const SubHeaderField = styled.div`
-  width: 86%;
+  width: 82%;
 
   display: flex;
   justify-content: space-between;
@@ -26,7 +26,7 @@ export const SubHeaderField = styled.div`
 `;
 export const SubTextSet = styled.div`
   font-size: 40px;
-  color: red;
+  color: black;
   font-weight: 700;
 
   @media only screen and (max-width: 700px) {
@@ -51,7 +51,7 @@ export const ButtonField = styled.div`
 `;
 export const SubText = styled.h1`
   font-size: 35px;
-  color: red;
+  color: black;
   font-weight: 600;
 
   @media only screen and (max-width: 800px) {
@@ -182,7 +182,7 @@ export const CardContainer = styled.div`
   align-items: center;
 `;
 export const CardField = styled.div`
-  width: 91%;
+  width: 80%;
   padding-left: 40px;
   display: flex;
 
@@ -198,12 +198,12 @@ export const MessageSetAdded = styled.div`
   width: 50px;
   min-height: 200px;
   margin-top: 20px;
-  background: #000000;
-  border: 3px solid #ff0000;
+  // background: white;
+  border: 3px solid #c1c1c1c1;
 
   border-left: none;
 
-  background: #000000;
+  background: #ffff;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 `;
@@ -215,12 +215,12 @@ export const Dot = styled.div`
   width: 40px;
   height: 232px;
 
-  background: #000000;
-  border: 4px solid #ff0000;
+  background: white;
+  border: 4px solid gray;
 
   border-left: none;
 
-  background: #000000;
+  background: white;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 `;

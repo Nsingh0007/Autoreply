@@ -24,7 +24,7 @@ export const CardContainer = styled.div`
   align-items: center;
 `;
 export const CardField = styled.div`
-  width: 90%;
+  width: 80%;
   padding-left: 40px;
   display: flex;
   margin-top: 250px;
@@ -68,15 +68,15 @@ export const SettingMainContainer = styled.div`
 export const Card = styled.div`
   width: 260px;
   min-height: 200px;
-  border: 3px solid #ff0000;
+  border: 3px solid #c1c1c1;
   margin-top: 20px;
   overflow-wrap: anywhere;
   padding: 10px;
   line-height: 18px;
-  color: white;
+  color: black;
   border-radius: 15px;
 
-  background: #000000;
+  background: #ffff;
   border-right: none;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;

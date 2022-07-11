@@ -28,7 +28,7 @@ const BotEdit = (props) => {
   };
 
   const BotEdithandler = async (id) => {
-    console.log("first", botEdit._id);
+    console.log("firstr", botEdit._id);
     await axios
 
       .put(
@@ -55,7 +55,7 @@ const BotEdit = (props) => {
       <div>
         <div className="popup-edit-field">
           <FiEdit className="edit-icon" onClick={deltogglePopup} />
-          <h3>Edit</h3>
+          <h3 style={{ color: "white" }}>Edit</h3>
         </div>
         {isDelOpen && (
           <Popup

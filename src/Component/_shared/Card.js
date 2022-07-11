@@ -11,14 +11,14 @@ export const Card = styled.div`
   overflow-wrap: ;
   padding: 5px;
   overflow-wrap: inherit;
-  color: white;
-  background: #000000;
-  border: 4px solid #ff0000;
+  color: black;
+  background: white;
+  border: 4px solid gray;
   border-radius: 10px;
   font-family: "Inter";
   font-style: normal;
   line-height: 38px;
-  background: #000000;
+
   overflow-wrap: anywhere;
   margin-bottom: 20px;
 
