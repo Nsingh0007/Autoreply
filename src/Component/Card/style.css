@@ -1,0 +1,111 @@
+.card{
+    width: 353px;
+    height: 120px;
+    overflow-wrap: anywhere;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  margin: 20px;
+    /* overflow-wrap: ; */
+    padding: 5px;
+    overflow-wrap: inherit;
+    color:black;
+    background: white;
+    border: 4px solid gray;
+    border-radius: 10px;
+    font-family: "Inter";
+    font-style: normal;
+    line-height: 38px;
+    background:white;
+   
+    margin-bottom: 20px;
+  
+    flex-wrap: wrap;
+    font-size: 25px;
+    font-weight: 700;
+
+
+
+
+    width: 353px;
+    height: 120px;
+    overflow-wrap: anywhere;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin: 20px;
+    padding: 5px;
+    overflow-wrap: inherit;
+    color: black;
+    background: white;
+    border: 4px solid gray;
+    border-radius: 10px;
+    font-family: "Inter";
+    font-style: normal;
+    line-height: 38px;
+    background: white;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    font-size: 25px;
+    font-weight: 700;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+}
+.Card-Container{
+    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+   
+}
+.card-field{
+    width: 91%;
+display: flex;
+justify-content:center;
+align-items: center;
+flex-direction: row;
+flex-wrap: wrap;
+margin-top: 250px;
+justify-content: flex-start;
+
+
+
+}
+
+
+
+.menu-icon{
+    width: 40px;
+    height: 40px;
+    color: 
+  red;
+  
+   margin-top: 5px;
+  
+}
+.card .hi-icon{
+    display: flex;
+    justify-content: flex-end;
+}
+.card .class-title{
+    display: flex;
+    justify-content:center;
+  
+
+}
