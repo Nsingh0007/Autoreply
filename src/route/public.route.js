@@ -12,7 +12,7 @@ const PublicRoute = ({ component: Component, restricted, ...props }) => {
   console.log("PublicRoute", isLogin());
 
   return true && !restricted ? (
-    <Navigate replace to={ROUTES.DASHBOARD} />
+    <Navigate replace to={ROUTES.BOT} />
   ) : (
     <Component {...props} />
   );

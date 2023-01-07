@@ -8,13 +8,15 @@ import { ROUTES } from "./constant";
 import PrivateRoute from "./private.route";
 import PublicRoute from "./public.route";
 
-import Dashboard from "../Page/Dashboard/Dashboard";
-import Home from "../Page/Home/Home";
+// import Dashboard from "../Page/Dashboard/Dashboard";
+import Bot from "../Page/Bot";
+import Home from "../Page/Home";
 
-import Login from "../Component/Login";
-import MessageSet from "../Page/MeassageSet";
-import MessageReply from "../Page/MessagReply";
-import AutoSetting from "../Page/Setting/AutoSetting";
+// import Login from "../Component/Login";
+import MessageSet from "../Page/MessageSet";
+import MessageReply from "../Page/MessageReply";
+// import AutoSetting from "../Page/AutoSetting";
+import AutoSetting from "../Page/Setting";
 
 const Routers = () => {
   const publicRoutes = [
@@ -29,18 +31,18 @@ const Routers = () => {
   const privateRoutes = [
     {
       key: 1,
-      component: Dashboard,
-      path: ROUTES.DASHBOARD,
+      component: Bot,
+      path: ROUTES.BOT,
       restricted: true,
       exact: true,
     },
-    {
-      key: 2,
-      component: Login,
-      path: ROUTES.LOGIN,
-      restricted: true,
-      exact: true,
-    },
+    // {
+    //   key: 2,
+    //   component: Login,
+    //   path: ROUTES.LOGIN,
+    //   restricted: true,
+    //   exact: true,
+    // },
     {
       key: 3,
       component: MessageReply,

@@ -1,9 +1,10 @@
 export const ROUTES = {
   INDEX: "/",
-  DASHBOARD: "/dashboard",
-  MESSAGESET: "/messageset",
-  MESSAGEREPLY: "/messagereply",
+  BOT: "/BOT",
+  MESSAGESET: "/messageset/:id",
+  // MESSAGESET: "/messageset/:id/:name",
+  MESSAGEREPLY: "/messagereply/:id",
 
-  LOGOUT: "/logout",
-  AUTOSETTING: "/autosetting",
+  // LOGOUT: "/logout",
+  AUTOSETTING: "/autosetting/:id",
 };

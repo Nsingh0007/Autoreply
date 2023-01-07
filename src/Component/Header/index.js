@@ -1,9 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import {
-  HeaderContainer,
-  HeaderField,
-  Headerheading,
-} from "../StyleComponent/HeaderStyle";
+import { HeaderContainer, HeaderField, Headerheading } from "./HeaderStyle";
 // import { Logout } from "../StyleComponent/HeaderStyle";
 import React, { useEffect, useState } from "react";
 import { MdArrowBack } from "@react-icons/all-files/md/MdArrowBack";
@@ -13,8 +9,11 @@ const Header = () => {
   useEffect(() => {
     var url = window.location.href;
     var new_url = url.split("/")[url.split("/").length - 1];
-    console.log("urlllll", url.split("/")[url.split("/").length - 1]);
-    if (new_url === "dashboard") {
+    var url2 = url.split("/")[url.split("/").length - 2];
+    console.log("urlll", url2 + new_url, url.split("/"));
+    if (new_url === "BOT") {
+      setShowBackIcon(false);
+    } else if (url2 == "BOT" && new_url == "") {
       setShowBackIcon(false);
     }
   }, []);

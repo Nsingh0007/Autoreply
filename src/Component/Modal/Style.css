@@ -1,0 +1,54 @@
+.Menu-container{
+    display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+  margin-top: 30px;
+
+   
+}
+.menu-field{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 120px;
+    height: 40px;
+    border: 2px solid gray;
+    border-radius: 15px;
+margin: 10px;
+}
+.del-icon{
+
+    color:#F7F9F9 ;
+    /* border: 2px solid red; */
+padding: 5px;
+      
+      width:25px;
+      height:25px;
+      border-radius:50%;
+      border-radius:50%;
+      margin-left:10px ;
+
+  
+}
+ h6{
+    margin-left: 5px;
+    color: aliceblue;
+  
+}
+.edit-icon{
+    padding: 5px;
+  
+    color:#F7F9F9  ;
+    /* border: 2px solid red; */
+ 
+
+      align-items: flex-start;
+      width:25px;
+      height:25px;
+      border-radius:50%;
+      border-radius:50%;
+  
+}
